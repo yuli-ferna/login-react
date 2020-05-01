@@ -25,71 +25,51 @@ class Root extends React.Component {
                 >
                     <Col span={8} xs={20} sm={16} md={12} lg={10} xl={8} xxl={6}>
                         <Form
-                            className={classnames(
-                                "login-form",
-                                classes.root,
-                                classes.form
-                            )}
+                            className="login-form" style={classes.root
+                            //    classes.form
+                            }
+
                         >
                             <div className="ant-row-flex ant-row-flex-space-around ant-row-flex-middle ant-form-item">
                                 <img src="https://assets-test-o-zone.s3.amazonaws.com/assets/Landing+page/OZ+logo.jpeg" style={{ height: "10em", width: "10em" }} />
                             </div>
                             <Form.Item>
-                                {getFieldDecorator("email", {
-                                    rules: [
-                                        {
-                                            type: "email",
-                                            message: "The input is not valid E-mail"
-                                        },
-                                        {
-                                            required: true,
-                                            message: "Please input your E-mail"
-                                        }
-                                    ]
-                                })(
-                                    <Input
-                                        className={classes.input}
-                                        prefix={
-                                            <Icon
-                                                type="user"
-                                                style={{ color: "rgba(0,0,0,.25)" }}
-                                            />
-                                        }
-                                        placeholder="Email"
-                                    />
-                                )}
+
+                                <Input
+                                    className={classes.input}
+                                    prefix={
+                                        <Icon
+                                            type="user"
+                                            style={{ color: "rgba(0,0,0,.25)" }}
+                                        />
+                                    }
+                                    placeholder="Email"
+                                />
+
                             </Form.Item>
                             <Form.Item>
-                                {getFieldDecorator("password", {
-                                    rules: [
-                                        {
-                                            required: true,
-                                            message: "Please input your Password"
-                                        }
-                                    ]
-                                })(
-                                    <Input
-                                        className={classes.input}
-                                        prefix={
-                                            <Icon
-                                                type="lock"
-                                                style={{ color: "rgba(0,0,0,.25)" }}
-                                            />
-                                        }
-                                        type="password"
-                                        placeholder="Password"
-                                    />
-                                )}
+
+                                <Input
+                                    className={classes.input}
+                                    prefix={
+                                        <Icon
+                                            type="lock"
+                                            style={{ color: "rgba(0,0,0,.25)" }}
+                                        />
+                                    }
+                                    type="password"
+                                    placeholder="Password"
+                                />
+
                             </Form.Item>
                             <Form.Item>
                                 <Button
                                     type="primary"
                                     htmlType="submit"
-                                    className={classnames(
-                                        classes.actionButton,
-                                        "login-form-button",
-                                        classes.input
-                                    )}
+                                    className="login-form-button"
+                                    style={classes.actionButton
+                                        //classes.input
+                                    }
                                 >
                                     Log in
                                 </Button>
