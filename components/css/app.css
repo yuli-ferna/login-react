@@ -1,0 +1,48 @@
+.root {
+    display: flex;
+    max-width: 300px;
+    flex-direction: column;
+    margin-top: 200px;
+}
+.actionButton {
+    width: 100%;
+    font-weight: bold;
+}
+
+.rightSubAction {
+    float: right;
+}
+
+.rememberMe {
+    float: left;
+}
+
+.leftSubAction {
+    float: left;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    box-shadow:
+      0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 120px;
+}
+.input {
+    height: 50px;
+}
+.lastRow {
+    margin-bottom: 0px;
+}
+.form-inline-login{
+    /* margin-left: 60%; */
+    vertical-align: initial;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected, 
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
+    background-color: transparent;
+}

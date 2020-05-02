@@ -2,7 +2,6 @@ const path = require('path');
 var glob = require("glob");
 module.exports = {
     entry: './components/index.js',
-    
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
@@ -18,6 +17,10 @@ module.exports = {
                     presets: ['@babel/preset-react']
                 }
             }
+            }, 
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },

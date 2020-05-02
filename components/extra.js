@@ -3,7 +3,7 @@ const classes = {
       display: "flex",
       // maxWidth: "300px",
       flexDirection: "column",
-      marginTop: "200px",
+      marginTop: "200px"
     },
     actionButton: {
       width: "100%",

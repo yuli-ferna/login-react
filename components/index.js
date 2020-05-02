@@ -1,13 +1,21 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, Layout } from "antd";
+import { Form, Input, Button, Row, Col, Menu, Layout } from "antd";
 import Icon from 'antd/lib/icon';
 import ReactDOM from 'react-dom';
+import "antd/dist/antd.css";
 import { classnames } from "classnames";
 import classes from "./extra";
+import { MailOutlined , LockOutlined } from '@ant-design/icons';
 
+import './css/app.css';
+
+const { SubMenu } = Menu;
+
+var classNames = require('classnames');
 class Root extends React.Component {
     render() {
         const { getFieldDecorator } = classes.form;
+        const liClasses = 'login-form root form';
         return (
             <Layout style={{
                 height: "100vh",
@@ -16,7 +24,43 @@ class Root extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <Row
+            <Menu theme="dark" mode="horizontal">
+            <Menu.Item>OZONE UNIVERSE</Menu.Item>
+            <Menu.Item className={'form-inline-login'} style={{ float:'right' }}>
+                <Form name="horizontal_login" layout="inline" style={{display: 'inline-flex'}}>
+                    <Form.Item
+                        name="email"
+                        rules={[{ required: true, message: 'Please input your email!' }]}
+                    >
+                        <Input prefix={<MailOutlined  className="site-form-item-icon" />} placeholder="Email" />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        type="password"
+                        placeholder="Password"
+                        />
+                    </Form.Item>
+                    <Form.Item shouldUpdate={true}>
+                        {() => (
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            
+                        >
+                            Log in
+                        </Button>
+                        )}
+                    </Form.Item>
+                    </Form>
+                
+            </Menu.Item>
+            
+            </Menu>
+                {/* <Row
                     type="flex"
                     justify="space-around"
                     align="middle"
@@ -25,10 +69,7 @@ class Root extends React.Component {
                 >
                     <Col span={8} xs={20} sm={16} md={12} lg={10} xl={8} xxl={6}>
                         <Form
-                            className="login-form" style={classes.root
-                            //    classes.form
-                            }
-
+                            className={liClasses} 
                         >
                             <div className="ant-row-flex ant-row-flex-space-around ant-row-flex-middle ant-form-item">
                                 <img src="https://assets-test-o-zone.s3.amazonaws.com/assets/Landing+page/OZ+logo.jpeg" style={{ height: "10em", width: "10em" }} />
@@ -36,7 +77,7 @@ class Root extends React.Component {
                             <Form.Item>
 
                                 <Input
-                                    className={classes.input}
+                                    className={'input'}
                                     prefix={
                                         <Icon
                                             type="user"
@@ -50,7 +91,7 @@ class Root extends React.Component {
                             <Form.Item>
 
                                 <Input
-                                    className={classes.input}
+                                    className={'input'}
                                     prefix={
                                         <Icon
                                             type="lock"
@@ -66,30 +107,28 @@ class Root extends React.Component {
                                 <Button
                                     type="primary"
                                     htmlType="submit"
-                                    className="login-form-button"
-                                    style={classes.actionButton
-                                        //classes.input
-                                    }
+                                    className="login-form-button actionButton input"
+                                    
                                 >
                                     Log in
                                 </Button>
                             </Form.Item>
-                            <Form.Item className={classes.lastRow}>
-                                <span className={classes.leftSubAction}>
-                                    {/* <Link to="/register">
-                                    </Link> */}
+                            <Form.Item className={'lastRow'}>
+                                <span className={'leftSubAction'}>
+                                    <Link to="/register">
+                                    </Link> 
                                     Register
                                 </span>
 
-                                <span className={classes.rightSubAction}>
-                                    {/* <Link to="/recover-password">
-                                    </Link> */}
+                                <span className={'rightSubAction'}>
+                                   <Link to="/recover-password">
+                                    </Link>
                                     Forgot password
                                 </span>
                             </Form.Item>
                         </Form>
                     </Col>
-                </Row>
+                </Row> */}
             </Layout>
         )
     }
