@@ -45,7 +45,7 @@ const classes = {
         justifyContent: "center",
         flexDirection: "column",
         textAlign: 'center',
-        width: "90%"
+        width: "100%"
     },
     logos:{
         width: 95,
@@ -74,7 +74,7 @@ const classes = {
         '&:hover': {
         background: 'rgb(63, 22, 140)',
         borderColor: 'rgb(63, 22, 140)',
-
+    
         },
         '&:focus': {
         background: 'rgb(63, 22, 140)',
@@ -84,7 +84,7 @@ const classes = {
         background: 'rgb(63, 22, 140)',
         borderColor: 'rgb(63, 22, 140)',
         }
-
+    
     },
     contentButton:{
         backgroundColor: '#e69138', 
@@ -94,7 +94,7 @@ const classes = {
         '&:hover': {
         background: '#c57d31',
         borderColor: 'rgb(63, 22, 140)',
-
+    
         },
         '&:focus': {
         background: '#c57d31',
@@ -104,7 +104,7 @@ const classes = {
         background: '#c57d31',
         borderColor: 'rgb(63, 22, 140)',
         },
-        '&:not(:lastChild)': {
+        '&:not(:last-child)': {
         marginBottom: 5
         },
         marginRight: 10,
@@ -114,6 +114,7 @@ const classes = {
         display: 'flex',
         flexFlow: 'row wrap',
         justifyContent: 'center',
+        width: "100%",
         marginTop: 10
     },
     messageChrome:{
@@ -122,7 +123,7 @@ const classes = {
         "0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.1)",
         marginTop: 30,
         borderRadius: 4,
-        width: "90%",
+        width: "100%",
         padding:5,
         // display: 'flex',
         // justifyContent: 'flex-end',
@@ -148,6 +149,7 @@ const classes = {
         textDecoration: 'underline',
     }
     }
+    
     };
 
     export default classes;

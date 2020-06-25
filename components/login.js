@@ -2,19 +2,14 @@ import React from 'react';
 
 import { Form, Icon, Input, Button, Row, Col, Alert, Layout, Menu, message, Card } from "antd";
 
-import ReactDOM from 'react-dom';
 import "antd/dist/antd.css";
-import ReactPlayer from 'react-player';
 import classnames from "classnames";
-import Navbar from "./navbar.js";
-import { HashLink as Link } from 'react-router-hash-link';
-
 import RegistrationForm from "./register.js";
 import styles from "./formCard.js";
 // import Logos from "./Logos.js";
 import { withStyles, makeStyles } from "@material-ui/styles";
 
-import './css/app.css';
+import './scss/login.scss';
 const { Header, Content, Footer } = Layout;
 
 class Login extends React.Component {
@@ -167,7 +162,7 @@ class Login extends React.Component {
                     gutter={[0, 20]}
                     // style={{ overflow:'auto' }}
                     >
-                    <Col span={8} xs={20} sm={20} md={18} lg={14} xl={0} xxl={0}>
+                    <Col span={8} xs={20} sm={20} md={20} lg={14} xl={0} xxl={0}>
                     <Form
                     // onSubmit={props.handleSubmit}
                     className={classnames(
@@ -274,7 +269,7 @@ class Login extends React.Component {
                     // align="middle"
                     gutter={[0, 0]}
                     >
-                    <Col span={8} xs={24} sm={24} md={24} lg={20} xl={14} xxl={14}
+                    <Col xs={20} sm={20} md={20} lg={20} xl={14} xxl={14}
                     style={{textAlign: 'center', 
                     display: 'flex',
                     flexDirection: 'column',
