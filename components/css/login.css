@@ -1,0 +1,37 @@
+.textAldrich{
+    font-family: 'Aldrich', sans-serif;
+}
+
+@media (max-width: 992px) { 
+    .logosContainer{
+        margin-top: 40px;
+        margin-bottom: 10px; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .logosContainer{
+        
+        margin-top: 20px;
+        margin-bottom: 10px; 
+    }
+    
+}
+
+@media (min-width: 1600px) { 
+    .logosContainer{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1500px) {
+    .logosSize img{
+        width: 80px;
+    }
+  }
+
+@media (min-width: 320px){
+    .header-login{
+        padding: 0px 30px !important;
+    }
+}

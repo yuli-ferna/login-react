@@ -38,11 +38,77 @@
 .lastRow {
     margin-bottom: 0px;
 }
-.form-inline-login{
-    /* margin-left: 60%; */
-    vertical-align: initial;
-}
+
 .ant-menu.ant-menu-dark .ant-menu-item-selected, 
 .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
     background-color: transparent;
+}
+.site-form-item-icon{
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.message-scroll{
+    text-align: center;
+    margin: 0px 55px 35px 55px;
+    background-color: #ffffffb8;
+    font-size: large;
+}
+
+.scroll-down {
+    height: 300px;	
+    overflow: hidden;
+    position: relative;
+}
+.scroll-down p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform:translateY(-100%);
+    -webkit-transform:translateY(-100%);	
+    transform:translateY(-100%);
+    /* Apply animation to this element */	
+    -moz-animation: scroll-down 5s linear infinite;
+    -webkit-animation: scroll-down 5s linear infinite;
+    animation: scroll-down 5s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-down {
+    0%   { -moz-transform: translateY(-100%); }
+    100% { -moz-transform: translateY(100%); }
+}
+@-webkit-keyframes scroll-down {
+    0%   { -webkit-transform: translateY(-100%); }
+    100% { -webkit-transform: translateY(100%); }
+}
+@keyframes scroll-down {
+0%   { 
+    -moz-transform: translateY(-100%); /* Browser bug fix */
+    -webkit-transform: translateY(-100%); /* Browser bug fix */
+    transform: translateY(-100%); 		
+}
+100% { 
+    -moz-transform: translateY(100%); /* Browser bug fix */
+    -webkit-transform: translateY(100%); /* Browser bug fix */
+    transform: translateY(100%); 
+}
+}
+
+.logos img{
+    width: 100px;
+}
+
+@media (min-width: 768px) { 
+    .form-inline-login{
+        display: none !important;
+    }
+}
+
+@media (min-width: 576px) { 
+    .form-inline-login{
+        display: none !important;
+    }
 }

@@ -15,35 +15,7 @@ class Navbar extends React.Component {
             <Menu.Item>OZONE UNIVERSE</Menu.Item>
             <Menu.Item className={'form-inline-login'} style={{ float:'right' }}>
                 
-                <Form name="horizontal_login" layout="inline" style={{display: 'inline-flex'}}>
-                    <Form.Item
-                        name="email"
-                        rules={[{ required: true, message: 'Please input your email!' }]}
-                    >
-                        <Input prefix={<MailOutlined  className="site-form-item-icon" />} placeholder="Email" />
-                    </Form.Item>
-                    <Form.Item
-                        name="password"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
-                        type="password"
-                        placeholder="Password"
-                        />
-                    </Form.Item>
-                    <Form.Item shouldUpdate={true}>
-                        {() => (
-                        <Button
-                            type="primary"
-                            htmlType="submit"
-                            
-                        >
-                            Log in
-                        </Button>
-                        )}
-                    </Form.Item>
-                    </Form>
+                
                 
             </Menu.Item>
             
