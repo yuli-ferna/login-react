@@ -342,6 +342,7 @@ class Login extends React.Component {
     
                         
                         <ProfileForm/>
+                        <ProfilePng/>
                     </Col>
                     </Row>
                 <Row
