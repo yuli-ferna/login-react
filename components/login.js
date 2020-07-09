@@ -10,6 +10,9 @@ import Navbar from "./navbar.js";
 import { HashLink as Link } from 'react-router-hash-link';
 
 import RegistrationForm from "./register.js";
+import ProfileForm from "./profile.js";
+import ProfilePng from "./profilePng.js";
+
 import styles from "./formCard.js";
 // import Logos from "./Logos.js";
 import { withStyles, makeStyles } from "@material-ui/styles";
@@ -342,7 +345,8 @@ class Login extends React.Component {
                         </Col> */}
                         </Row>
     
-                        <RegistrationForm  />
+                        
+                        <ProfileForm/>
                     </Col>
                     </Row>
                 <Row
