@@ -58,6 +58,7 @@ class ProfileForm extends React.Component {
                         
                         type="primary"
                         htmlType="submit"
+                        className='textAldrich'
                         >
                         <Icon type="menu" style={{ fontSize: '26px' }}/>
                 </Button>
@@ -72,7 +73,6 @@ class ProfileForm extends React.Component {
                     <Form
                     
                     >
-                      
                         <Form.Item label='First Name' style={widthStyle}>
                             <Input   placeholder="First Name"  />
                         </Form.Item>
@@ -113,6 +113,7 @@ class ProfileForm extends React.Component {
                                 
                                 type="primary"
                                 htmlType="submit"
+                                className='textAldrich'
                             >
                                 Update Profile
                             </Button>

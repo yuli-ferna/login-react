@@ -1,7 +1,10 @@
 import React from "react";
 import { Form, Input, Button, Alert, Modal } from "antd";
+import {Link, Route, Router} from 'react-router';
 
 import { Layout, Row } from "antd";
+import ProfileForm from './profile.js';
+
 const { Content } = Layout;
 
 const styles = {
@@ -19,8 +22,7 @@ const styles = {
 };
 
 class RegistrationForm extends React.Component {
-
-
+   
     render() {
         // const { userCreated, showError, error } = this.state;
         // const { getFieldDecorator } = this.props.form;
@@ -39,6 +41,7 @@ class RegistrationForm extends React.Component {
         };
 
         
+
         return (
         <div>
             
@@ -154,7 +157,10 @@ class RegistrationForm extends React.Component {
                 >
                 Register
                 </Button>
+                
+               
             </Form.Item>
+            
             <Row>
                 <span style={{ alignItems: "center" }}>
                 {/* Already registered? <Link to="/login">Login</Link> */}
