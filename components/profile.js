@@ -1,8 +1,6 @@
 import React from "react";
-import { Form, Input, Button, Modal } from "antd";
+import { Form, Input, Button, Modal, Icon } from "antd";
 import Photo from './Photo.js';
-import Navbar02 from "./navbar02.js";
-
 
 class ProfileForm extends React.Component {
     constructor(props) {
@@ -52,7 +50,7 @@ class ProfileForm extends React.Component {
                 <Button onClick={this.showModal}
                         style={{
                             height: 50,
-                            width: "20%",
+                            // width: "20%",
                             fontWeight: "bold",
                             backgroundColor: 'rgba(99,37,201,1)',
                             borderColor: 'transparent'
@@ -61,7 +59,7 @@ class ProfileForm extends React.Component {
                         type="primary"
                         htmlType="submit"
                         >
-                        Profile
+                        <Icon type="menu" style={{ fontSize: '26px' }}/>
                 </Button>
 
                 <Modal
