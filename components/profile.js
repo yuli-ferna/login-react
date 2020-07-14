@@ -42,10 +42,13 @@ class ProfileForm extends React.Component {
         const widthStyle = {
             margin: 0
           }
+        const topModel = {
+            marginTop: -30
+        }
         
         return(  
             
-            <div >
+            <div  >
                 
                 <Button onClick={this.showModal}
                         style={{
@@ -69,6 +72,7 @@ class ProfileForm extends React.Component {
                     onCancel={this.handleCancel}
                     footer={null}
                     className='textAldrich'
+                    style={topModel}
                      > 
                     <Form
                     
