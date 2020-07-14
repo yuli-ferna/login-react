@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Input, Button, Modal } from "antd";
-
 import Photo from './Photo.js';
+import Navbar02 from "./navbar02.js";
+
 
 class ProfileForm extends React.Component {
     constructor(props) {
@@ -10,23 +11,22 @@ class ProfileForm extends React.Component {
       }
 
     showModal = () => {
-    this.setState({
-        visible: true,
-    });
+        this.setState({
+            visible: true,
+        });
     };
 
-    handleOk = e => {       
-    this.setState({
-        visible: false,
-    });
-    };
+    handleCancel = () => {
+        this.setState({ visible: false });
+      };
+      handleOk = () => {
+        this.setState({ loading: true });
+        setTimeout(() => {
+          this.setState({ loading: false, visible: false });
+        }, 3000);
+      };
 
-    handleCancel = e => {    
-    this.setState({
-        visible: false,
-    });
-    };
-
+   
     render(){  
         const tailFormItemLayout = {
             wrapperCol: {
@@ -40,13 +40,19 @@ class ProfileForm extends React.Component {
                 }
             }
         };
+
+        const widthStyle = {
+            margin: 0
+          }
         
         return(  
-            <div>
+            
+            <div >
+                
                 <Button onClick={this.showModal}
                         style={{
                             height: 50,
-                            width: "30%",
+                            width: "20%",
                             fontWeight: "bold",
                             backgroundColor: 'rgba(99,37,201,1)',
                             borderColor: 'transparent'
@@ -60,32 +66,39 @@ class ProfileForm extends React.Component {
 
                 <Modal
                     visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}  > 
-                    <Form>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="First Name" />
+                   
+                    onCancel={this.handleCancel}
+                    footer={null}
+                    className='textAldrich'
+                     > 
+                    <Form
+                    
+                    >
+                      
+                        <Form.Item label='First Name' style={widthStyle}>
+                            <Input   placeholder="First Name"  />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Last Name" />
+                                                
+                        <Form.Item label='Last Name' style={widthStyle}>
+                            <Input   placeholder="Last Name" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="City" />
+                        <Form.Item label='City' style={widthStyle}>
+                            <Input   placeholder="City" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Country" />
+                        <Form.Item label='Country' style={widthStyle}>
+                            <Input  placeholder="Country" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Phone Number" />
+                        <Form.Item label='Phone Number' style={widthStyle}>
+                            <Input  placeholder="Phone Number" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Email" />
+                        <Form.Item label='Email' style={widthStyle}>
+                            <Input  placeholder="Email" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Linked In Profile" />
+                        <Form.Item label='Linked In Profile' style={widthStyle}>
+                            <Input  placeholder="Linked In Profile" />
                         </Form.Item>
-                        <Form.Item>
-                            <Input style={{ height: 50 }} placeholder="Business Website" />
+                        <Form.Item label='Business Website' style={widthStyle}>
+                            <Input  placeholder="Business Website" />
                         </Form.Item>
                         <Form.Item>
                             <Photo />
@@ -93,7 +106,7 @@ class ProfileForm extends React.Component {
                         <Form.Item {...tailFormItemLayout}>
                             <Button
                                 style={{
-                                    height: 50,
+                                    height: 40,
                                     width: "100%",
                                     fontWeight: "bold",
                                     backgroundColor: 'rgba(99,37,201,1)',
