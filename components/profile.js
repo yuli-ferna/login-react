@@ -1,8 +1,6 @@
 import React from "react";
 import { Form, Input, Button, Modal } from "antd";
 import Photo from './Photo.js';
-import Navbar02 from "./navbar02.js";
-
 
 class ProfileForm extends React.Component {
     constructor(props) {
@@ -60,6 +58,7 @@ class ProfileForm extends React.Component {
                         
                         type="primary"
                         htmlType="submit"
+                        className='textAldrich'
                         >
                         Profile
                 </Button>
@@ -74,7 +73,6 @@ class ProfileForm extends React.Component {
                     <Form
                     
                     >
-                      
                         <Form.Item label='First Name' style={widthStyle}>
                             <Input   placeholder="First Name"  />
                         </Form.Item>
@@ -115,6 +113,7 @@ class ProfileForm extends React.Component {
                                 
                                 type="primary"
                                 htmlType="submit"
+                                className='textAldrich'
                             >
                                 Update Profile
                             </Button>
