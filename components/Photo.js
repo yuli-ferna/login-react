@@ -1,69 +1,70 @@
-import React from "react";
-import { Upload, Icon, message } from 'antd';
+import React, { useState } from "react";
+import axios from 'axios';
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
+function Photo() {
 
-function beforeUpload(file) {
-  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-  if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG file!');
-  }
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    message.error('Image must smaller than 2MB!');
-  }
-  return isJpgOrPng && isLt2M;
-}
-
-class Photo extends React.Component {
-  state = {
-    loading: false,
-  };
+    const url = 'https://api.cloudinary.com/v1_1/dqvbgvuoe/image/upload';
+    const preset = 'imagesamerik'
+    const cloudName = 'dqvbgvuoe'
   
+    const [loading, setLoading] = useState(false)
+    const [image, setImage] = useState("")
+    const [showUrl, setUrl] = useState("")
+    const [publicId, setPublicId] = useState("")
 
-  handleChange = info => {
-    if (info.file.status === 'uploading') {
-      this.setState({ loading: true });
-      return;
-    }
-    if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, imageUrl =>
-        this.setState({
-          imageUrl,
-          loading: false,
-        }),
-      );
-    }
-  };
+    const onChange = e => {
+      setImage(e.target.files[0]);
+    }; 
 
-  render() {
-    const uploadButton = (
-      <div>
-        <Icon type={this.state.loading ? 'loading' : 'plus'} />
-        <div >Profile Image</div>
-      </div>
-    );
-    const { imageUrl } = this.state;
+    const onSubmit = async () => {
+      const formData = new FormData();
+      formData.append('file', image);
+      formData.append('upload_preset', preset);
+
+      try {
+        setLoading(true);
+        const res = await axios.post(url, formData);
+        const imageUrl = res.data.secure_url;
+        const publicIdData = res.data.public_id;
+        
+       /* const image = await axios.post('http://localhost:3000/upload', {
+          imageUrl
+        });*/
+
+        setLoading(false);
+        setUrl(imageUrl);
+        setImage(image.data);
+        setPublicId(publicIdData)
+        
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     return (
-      <Upload
-     
-        name="avatar"
-        listType="picture-card"
-        className="avatar-uploader"
-        showUploadList={false}
-        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"  
-        beforeUpload={beforeUpload}
-        onChange={this.handleChange}
-      >
-        {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton }
-      </Upload>
+      
+        <div>
+          <h3>Upload Image to Cloudinary</h3>
+          <input type="file" name="file" placeholder="Upload"
+           onChange={onChange}/>
+
+           <br></br>
+
+          <div className='center'>
+              <button onClick={onSubmit} className='btn center'>
+                Upload Image
+              </button>
+          </div>
+
+          <div>
+            <a href={showUrl} target="_blank">Your URL Image</a>
+            <Image cloudName="dqvbgvuoe" publicId={publicId} width="100" crop="scale" />
+          </div><br></br>
+          
+        </div>
     );
-  }
+  
 }
 
 export default (Photo);
