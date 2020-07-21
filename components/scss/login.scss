@@ -33,9 +33,99 @@
         width: 80px;
     }
   }
-
-@media (min-width: 320px){
-    .header-login{
-        padding: 0px 30px !important;
+  
+  .drop-down{
+      width: 50%;
+      >button{
+        cursor: pointer;
+          background: #6325c9;
+          border: 1px solid black !important;
+          color: #ff8000;
+          width: 100%;
+          min-height: 50px;
+          &:hover{
+              background: #8d52ee;
+              color: #cbcacb;
+          }
+      }
     }
+@media (max-width:1199px) {
+    .drop-down{
+        width: 100%;
+      }
+}
+
+.background{
+    height: 100vh;
+    overflow: auto;
+}
+
+.background-img{
+    background-position : center !important;
+    background-size : cover !important;
+    background-repeat : no-repeat !important;
+}
+.background-metaburn{
+    @extend .background;
+    @extend .background-img;
+    background-image : url("https://assets-test-o-zone.s3.amazonaws.com/assets2021/Metaburn/background+login+image.jpg") !important;
+}
+.background-others{
+    @extend .background;
+    background : radial-gradient(circle, rgba(43,16,97,1) 0%, rgba(99,37,201,1) 100%) !important;
+}
+
+.list-unstyled-drop{
+    list-style: none;
+    padding: 0;
+}
+
+.card-dropdown{
+    display: none;
+    width: 100%;
+    height: 0px;
+    opacity: 0;
+    transition: all .25s cubic-bezier(0.36, 0.35, 0.48, 0.44);
+    &.active{
+        display: block;
+        height: auto;
+        opacity: 1;
+    }
+    >li{
+        width: 100%;
+        >button{
+            cursor: pointer;
+            border: 1px solid black !important;
+            background-color: #8d52ee;
+            color: #cbcacb;
+            width: 100%;
+            min-height: 50px;
+            &:hover{
+                background: #6325c9;
+                color: #ff8000;
+            }
+        }
+    }
+}
+
+.background-card-metaburn{
+    background-color: white;
+    height: 50em;
+}
+.background-white{
+    background-color: white;
+}
+
+.logo-metaburn{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.header-login{
+    z-index: 3;
 }
