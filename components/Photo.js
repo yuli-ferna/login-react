@@ -25,8 +25,10 @@ function Photo() {
       try {
         setLoading(true);
         const res = await axios.post(url, formData);
+        console.log("res ", res)
         const imageUrl = res.data.secure_url;
         const publicIdData = res.data.public_id;
+        console.log("public Id ", publicIdData)
         
        /* const image = await axios.post('http://localhost:3000/upload', {
           imageUrl
@@ -45,9 +47,7 @@ function Photo() {
     return (
       
         <div>
-          <h3>Upload Image to Cloudinary</h3>
-          <input type="file" name="file" placeholder="Upload"
-           onChange={onChange}/>
+          <input type="file" name="file" onChange={onChange}/>
 
            <br></br>
 
@@ -58,7 +58,7 @@ function Photo() {
           </div>
 
           <div>
-            <a href={showUrl} target="_blank">Your URL Image</a>
+            <a href={showUrl} target="_blank">URL Image</a>
             <Image cloudName="dqvbgvuoe" publicId={publicId} width="100" crop="scale" />
           </div><br></br>
           

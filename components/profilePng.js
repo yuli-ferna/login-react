@@ -1,16 +1,29 @@
 import React from "react";
 import html2canvas from 'html2canvas';
-import { Card, Avatar, Layout} from 'antd';
+import { Card, Avatar, Layout, Modal} from 'antd';
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Meta } = Card;
+const cloudname = 'dqvbgvuoe'
+const publicid = 'imagesamerik/ypgjl3r7makze9mv6oh4'
 
 class ProfilePng extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { visible: false };  
+    this.state = { visible: true };  
   }
   
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
+  handleOk = () => {
+  this.setState({ loading: true });
+  setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+  }, 3000);
+  };
   
   printDocumentImg() {
     const input = document.getElementById('divToPrint');
@@ -25,15 +38,22 @@ class ProfilePng extends React.Component {
   }
 
   render(){
-       
+    const topModel = {
+      marginTop: -30
+    };
     return(
       <div>
-        <div >
-          <button onClick={this.printDocumentImg}>PNG</button>
-        </div>
-
+        <Modal
+                    visible={this.state.visible}
+                    onCancel={this.handleCancel}
+                    footer={null}
+                    className='textAldrich'
+                    style={topModel}
+                     > 
+        
+       
         <div id="divToPrint" >
-
+            
             <div>
               <Card title="MY CARD INFO"  style={{ width: 400, margin: 20}}>
                
@@ -46,9 +66,7 @@ class ProfilePng extends React.Component {
                     
                     <Layout> 
                       <Content>
-                        <img 
-                        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" 
-                        crossOrigin="true"
+                        <Image cloudName={cloudname} publicId={publicid}
                         style={{ height: "8em", width: "8em" }} />
                         <br></br>
                         <br></br>
@@ -66,7 +84,25 @@ class ProfilePng extends React.Component {
 
               </Card>
             </div>
+           
         </div>
+        
+        <div >
+              <button onClick={this.printDocumentImg}
+               style={{
+                height: 50,
+                
+                backgroundColor: 'rgba(99,37,201,1)',
+                borderColor: 'transparent' ,
+                fontSize: '14px',
+                color: "rgba(255,255,255)"              
+                }}
+                className={'textAldrich'}
+                type="primary"
+                
+                  >Download</button>
+        </div>
+        </Modal>
       </div>
 
     )

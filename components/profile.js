@@ -1,21 +1,12 @@
 import React from "react";
 import { Form, Input, Button, Modal, Icon } from "antd";
 import Photo from './Photo.js';
-import Photo02 from './photo02.js';
-
-
 
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);     
-        this.state = { visible: false };  
+        this.state = { visible: true };  
       }
-
-    showModal = () => {
-        this.setState({
-            visible: true,
-        });
-    };
 
     handleCancel = () => {
         this.setState({ visible: false });
@@ -52,23 +43,7 @@ class ProfileForm extends React.Component {
         return(  
             
             <div  >
-                
-                <Button onClick={this.showModal}
-                        style={{
-                            height: 50,
-                            // width: "20%",
-                            fontWeight: "bold",
-                            backgroundColor: 'rgba(99,37,201,1)',
-                            borderColor: 'transparent'
-                        }}
-                        
-                        type="primary"
-                        htmlType="submit"
-                        className='textAldrich'
-                        >
-                        <Icon type="menu" style={{ fontSize: '26px' }}/>
-                </Button>
-
+               
                 <Modal
                     visible={this.state.visible}
                     onCancel={this.handleCancel}
