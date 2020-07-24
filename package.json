@@ -29,6 +29,7 @@
     "cloudinary-react": "^1.6.2",
     "glob": "^7.1.6",
     "html2canvas": "^1.0.0-rc.5",
+    "jquery": "^3.5.1",
     "jspdf": "^1.5.3",
     "node-sass": "^4.13.0",
     "path": "^0.12.7",

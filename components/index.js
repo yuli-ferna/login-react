@@ -1,12 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import { Form, Icon, Input, Button, Row, Col, Alert, Layout, Menu, message, Card } from "antd";
+import {
+  Form,
+  Icon,
+  Input,
+  Button,
+  Row,
+  Col,
+  Alert,
+  Layout,
+  Menu,
+  message,
+  Card,
+} from "antd";
 
-import ReactDOM from 'react-dom';
-import 'regenerator-runtime/runtime'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "antd/dist/antd.css";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 import classnames from "classnames";
 // import Navbar from "./navbar.js";
 import ProfileForm from "./profile.js"
@@ -34,6 +45,6 @@ class Root extends React.Component {
     }
 }
 
-let container = document.getElementById('app');
+let container = document.getElementById("app");
 let component = <Root />;
 ReactDOM.render(component, container);
