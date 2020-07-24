@@ -338,7 +338,7 @@ class Login extends React.Component {
                         </Col> */}
                         </Row>
     
-                        <RegisterForm/>
+                        <RegistrationForm/>
                         
                     </Col>
                     </Row>
