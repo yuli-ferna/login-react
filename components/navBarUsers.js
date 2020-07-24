@@ -2,10 +2,9 @@ import React from "react";
 import { Menu, Dropdown, Button, Icon } from 'antd';
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
-import Images from './images.js';
+
 import Gallery from './gallery.js';
-import GalleryByUser from './galleryByUser.js'
-import SampleGallery from './sampleGallery.js'
+
 
 import {
   BrowserRouter as Router,
