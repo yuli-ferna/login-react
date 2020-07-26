@@ -1,74 +1,76 @@
 import React from "react";
-import { Menu, Dropdown, Button, Icon } from 'antd';
+import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
-
 import Gallery from './gallery.js';
 
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-const menu = (
-  <Menu>
+class NavBarUsers extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+          childVisible1: false,
+          childVisible2: false,
+          childVisible3: false
+        }
+      }
     
-    <Menu.Item>
-      <Link to="/profile">Profile</Link>
-    </Menu.Item>
-    <Menu.Item>
-      <Link to="/card">Card</Link>
-    </Menu.Item>
-    
-    <Menu.Item>
-      <Link to="/gallery">Gallery</Link>
-    </Menu.Item>
-    
-    
-  </Menu>
-);
+      onClick = ({ key }) => {
+       
+        if (key == "1"){
+          this.setState(prevState => ({ childVisible1: !prevState.childVisible1 }))
+          this.setState({ childVisible2: false })
+          this.setState({ childVisible3: false })
+        }
+        if (key == "2"){
+          this.setState(prevState => ({ childVisible2: !prevState.childVisible2 }))
+          this.setState({ childVisible1: false })
+          this.setState({ childVisible3: false })
+        }
+        if (key == "3"){
+          this.setState(prevState => ({ childVisible3: !prevState.childVisible3 }))
+          this.setState({ childVisible1: false })
+          this.setState({ childVisible2: false })
+        }
+    };  
 
-function NavBarUsers() {
-    return(
-       <Router>
-         <div>
-            <Dropdown overlay={menu} placement="bottomLeft" className='textAldrich'>
-                <Button
-                    style={{
-                        height: 50,
-                        fontWeight: "bold",
-                        backgroundColor: 'rgba(99,37,201,1)',
-                        borderColor: 'transparent'
-                      
-                    }}
-                    
-                    type="primary"
-                    className='textAldrich'
-                    >
-                    <Icon type="menu" style={{ fontSize: '26px' }}/>    
-                </Button>
-            </Dropdown>
+    render(){
+        const menu = (
+            <Menu onClick={this.onClick} >
+                    <Menu.Item key="1">Profile</Menu.Item>
+                    <Menu.Item key="2" >Card</Menu.Item>
+                    <Menu.Item key="3">Gallery</Menu.Item> 
+            </Menu>
+          );
 
-            <Switch>
-              <Route path="/profile">
-                <ProfileForm/>
-              </Route>
-              <Route path="/card">
-                <ProfilePng/>
-              </Route>
-              
-              <Route path="/gallery">
-                <Gallery/>
-              </Route>
-              
-            </Switch>
-        </div>
+        return(
+            <div>
+                <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft" className='textAldrich'>
+                    <Button
+                        style={{
+                            height: 50,
+                            fontWeight: "bold",
+                            backgroundColor: 'rgba(99,37,201,1)',
+                            borderColor: 'transparent'
+                        }}
+                        type="primary"
+                        className='textAldrich'
+                        >
+                        <Icon type="menu" style={{ fontSize: '26px' }}/>    
+                    </Button>
+                </Dropdown>
 
-      </Router>
-    )
+                
+                <div>
+                    {this.state.childVisible1 ? <ProfileForm /> : null}
+                    {this.state.childVisible2 ? <ProfilePng /> : null}
+                    {this.state.childVisible3 ? <Gallery /> : null}
+                </div>
+
+            </div>
+        )
+    }
+
+    
 }
 
 export default (NavBarUsers);
