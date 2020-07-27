@@ -14,8 +14,6 @@ import {
   Card,
 } from "antd";
 
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import 'regenerator-runtime/runtime'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -172,21 +170,11 @@ class Root extends React.Component {
     };
 
     // return <Login {...propsMetaburn}  />;
+    return <NavBarUsers/>
     // const liClasses = 'login-form root form';
-    return (
-    // render() {
-    //     // const { getFieldDecorator } = classes.form;
-        
-    //     return (
-            
-            
-                <Login/>
-            
-        );
+    
     }
-            
-    //     );
-    // }
+         
 }
 
 let container = document.getElementById("app");
