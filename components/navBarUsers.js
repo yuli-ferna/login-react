@@ -8,28 +8,22 @@ class NavBarUsers extends React.Component {
     constructor() {
         super();
         this.state = {
-          childVisible1: false,
-          childVisible2: false,
-          childVisible3: false
+          childVisible: ProfileForm,
+          notFirstView: false
         }
       }
     
       onClick = ({ key }) => {
-       
+        this.setState({notFirstView: true})
+
         if (key == "1"){
-          this.setState(prevState => ({ childVisible1: !prevState.childVisible1 }))
-          this.setState({ childVisible2: false })
-          this.setState({ childVisible3: false })
+          this.setState({childVisible: ProfileForm})
         }
         if (key == "2"){
-          this.setState(prevState => ({ childVisible2: !prevState.childVisible2 }))
-          this.setState({ childVisible1: false })
-          this.setState({ childVisible3: false })
+          this.setState({childVisible: ProfilePng})
         }
         if (key == "3"){
-          this.setState(prevState => ({ childVisible3: !prevState.childVisible3 }))
-          this.setState({ childVisible1: false })
-          this.setState({ childVisible2: false })
+          this.setState({childVisible: Gallery})
         }
     };  
 
@@ -58,14 +52,10 @@ class NavBarUsers extends React.Component {
                         <Icon type="menu" style={{ fontSize: '26px' }}/>    
                     </Button>
                 </Dropdown>
-
                 
                 <div>
-                    {this.state.childVisible1 ? <ProfileForm /> : null}
-                    {this.state.childVisible2 ? <ProfilePng /> : null}
-                    {this.state.childVisible3 ? <Gallery /> : null}
+                  {this.state.notFirstView ? <this.state.childVisible /> : null}
                 </div>
-
             </div>
         )
     }
