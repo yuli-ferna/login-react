@@ -4,16 +4,16 @@ import { Form, Icon, Input, Button, Row, Col, Alert, Layout, Menu, message, Card
 
 import "antd/dist/antd.css";
 import classnames from "classnames";
-import RegistrationForm from "./register.js";
+import RegistrationForm from "../register.js";
 
-import styles from "./formCard.js";
+import styles from "../formCard.js";
 // import Logos from "./Logos.js";
 import { withStyles, makeStyles } from "@material-ui/styles";
 
-import './scss/login.scss';
+import '../scss/login.scss';
 const { Header, Content, Footer } = Layout;
 
-class Login extends React.Component {
+class LoginOld extends React.Component {
     render() {
         // const { getFieldDecorator } = classes.form;
         const liClasses = 'login-form root form';
@@ -361,4 +361,4 @@ class Login extends React.Component {
     }
 }
 
-export default withStyles(styles)(Login)
+export default withStyles(styles)(LoginOld)

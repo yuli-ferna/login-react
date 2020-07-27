@@ -30,7 +30,8 @@ import Images from "./images.js"
 import Gallery from "./gallery.js"
 import { HashLink as Link } from 'react-router-hash-link';
 
-import Login from "./login.js";
+import LoginOld from "./logins/loginOld.js";
+import Login from "./logins/login.js";
 const { Header, Content, Footer } = Layout;
 
 class Root extends React.Component {
@@ -169,12 +170,11 @@ class Root extends React.Component {
       ],
     };
 
-    // return <Login {...propsMetaburn}  />;
-    return <NavBarUsers/>
-    // const liClasses = 'login-form root form';
-    
+    return <Login {...propsMetaburn}  />;
+    // return <LoginOld  />;
+    // return <NavBarUsers/>
     }
-         
+
 }
 
 let container = document.getElementById("app");
