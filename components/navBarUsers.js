@@ -3,19 +3,21 @@ import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
+import Photo02 from './photo02.js';
 
 class NavBarUsers extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props)
         this.state = {
           childVisible: ProfileForm,
-          notFirstView: false
+          notFirstView: false,
+         
         }
       }
-    
+      
       onClick = ({ key }) => {
         this.setState({notFirstView: true})
-
+       
         if (key == "1"){
           this.setState({childVisible: ProfileForm})
         }
@@ -25,6 +27,7 @@ class NavBarUsers extends React.Component {
         if (key == "3"){
           this.setState({childVisible: Gallery})
         }
+       
     };  
 
     render(){
@@ -53,8 +56,9 @@ class NavBarUsers extends React.Component {
                     </Button>
                 </Dropdown>
                 
-                <div>
-                  {this.state.notFirstView ? <this.state.childVisible /> : null}
+                <div >
+                  {this.state.notFirstView && <this.state.childVisible /> }
+                 
                 </div>
             </div>
         )
