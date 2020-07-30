@@ -3,32 +3,46 @@ import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
-import Photo02 from './photo02.js';
 
 class NavBarUsers extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super();
         this.state = {
-          childVisible: ProfileForm,
-          notFirstView: false,
-         
+          childVisible1: false,
+          childVisible2: false,
+          childVisible3: false,
         }
       }
-      
+    
       onClick = ({ key }) => {
-        this.setState({notFirstView: true})
-       
         if (key == "1"){
-          this.setState({childVisible: ProfileForm})
+          this.setState({ childVisible1: true })
+          this.setState({ childVisible2: false })
+          this.setState({ childVisible3: false })
         }
         if (key == "2"){
-          this.setState({childVisible: ProfilePng})
+          this.setState({ childVisible1: false })
+          this.setState({ childVisible2: true })
+          this.setState({ childVisible3: false })
         }
         if (key == "3"){
-          this.setState({childVisible: Gallery})
+          this.setState({ childVisible1: false })
+          this.setState({ childVisible2: false })
+          this.setState({ childVisible3: true })
         }
-       
-    };  
+      };  
+
+      closeChildVisible = ( key ) => {
+        if (key == "1"){
+          this.setState({ childVisible1: false })
+        }
+        if (key == "2"){
+          this.setState({ childVisible2: false })
+        }
+        if (key == "3"){
+          this.setState({ childVisible3: false })
+        }
+      };  
 
     render(){
         const menu = (
@@ -38,7 +52,7 @@ class NavBarUsers extends React.Component {
                     <Menu.Item key="3">Gallery</Menu.Item> 
             </Menu>
           );
-
+     
         return(
             <div>
                 <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft" className='textAldrich'>
@@ -55,11 +69,20 @@ class NavBarUsers extends React.Component {
                         <Icon type="menu" style={{ fontSize: '26px' }}/>    
                     </Button>
                 </Dropdown>
-                
-                <div >
-                  {this.state.notFirstView && <this.state.childVisible /> }
-                 
+
+                <div>
+                    
+                    {this.state.childVisible1 && <ProfileForm 
+                    close={this.closeChildVisible.bind(this, "1")}/> }
+
+                    {this.state.childVisible2 && <ProfilePng 
+                    close={this.closeChildVisible.bind(this,"2")}/> }
+
+                    {this.state.childVisible3 && <Gallery  
+                    close={this.closeChildVisible.bind(this,"3")}/> }
+                   
                 </div>
+
             </div>
         )
     }
