@@ -8,17 +8,6 @@ class ProfileForm extends React.Component {
         this.state = { visible: true };  
       }
 
-    handleCancel = () => {
-        this.setState({ visible: false });
-      };
-
-    handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-        this.setState({ loading: false, visible: false });
-    }, 3000);
-    };
-
     render(){  
         const tailFormItemLayout = {
             wrapperCol: {
@@ -45,14 +34,17 @@ class ProfileForm extends React.Component {
             <div  >
                
                 <Modal
+                    keyboard={false}
+                    maskClosable={false}
                     visible={this.state.visible}
-                    onCancel={this.handleCancel}
+                    onCancel={this.props.close}
+                    destroyOnClose={true}
                     footer={null}
                     className='textAldrich'
                     style={topModel}
                      > 
 
-                    <Form >
+                    <Form>
                         <Form.Item label='First Name' style={widthStyle}>
                             <Input name="firstName"  placeholder="First Name"  />
                         </Form.Item>
