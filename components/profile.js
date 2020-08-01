@@ -1,12 +1,59 @@
 import React from "react";
 import { Form, Input, Button, Modal, Icon } from "antd";
 import Photo from './Photo.js';
+//import {graphql} from 'react-apollo';
+//import queries from '../utils/queries.js'
 
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);     
-        this.state = { visible: true };  
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+             visible: true,
+             formFields: {
+                firstName: "",
+                lastName: "",
+                city: "",
+                country: "",
+                phoneNumber: "",
+                email: "",
+                linkedinAddress: "",
+                businessWebsite: "",
+
+             }
+           
+            };  
       }
+
+      getData(){
+        this.setState({ formFields: {firstName: "America" } })
+        this.setState({ formFields: {lastName: "Munoz" } })
+        this.setState({ formFields: {city: "Caracas" } })
+        this.setState({ formFields: {country: "Venezuela" } })
+        this.setState({ formFields: {email: "amerik0904@gmail.com" }  })
+        console.log("componentDidMount ", this.state.formFields)
+      }
+      componentDidMount(){
+        this.getData()
+      }
+      
+      handleSubmit = async (e) => {
+        e.preventDefault()
+        const values = JSON.stringify(this.state.formFields)
+        console.log("Formulario: ", this.state.formFields)
+        
+       /* const response = await this.mutation({
+            variables: this.state.formFields
+        })
+        console.log("Grapql response: ", response)*/
+      }
+
+     handleChange(e) {
+        const { name, value } = e.target
+        this.setState({
+            formFields: { ...this.state.formFields, [name]: value }
+        })
+     }
 
     render(){  
         const tailFormItemLayout = {
@@ -29,10 +76,18 @@ class ProfileForm extends React.Component {
             marginTop: -30
         };
         
+        const { firstName,
+                lastName, 
+                city, 
+                country, 
+                phoneNumber, 
+                email, 
+                linkedinAddress, 
+                businessWebsite } = this.state.formFields
+
         return(  
             
-            <div  >
-               
+            <div>
                 <Modal
                     keyboard={false}
                     maskClosable={false}
@@ -44,31 +99,31 @@ class ProfileForm extends React.Component {
                     style={topModel}
                      > 
 
-                    <Form>
+                    <Form onSubmit={this.handleSubmit}>
                         <Form.Item label='First Name' style={widthStyle}>
-                            <Input name="firstName"  placeholder="First Name"  />
+                            <Input type="text" name="firstName"  placeholder="First Name" value={firstName} onChange={this.handleChange} />
                         </Form.Item>
                                                 
                         <Form.Item label='Last Name' style={widthStyle}>
-                            <Input  name="lastName"  placeholder="Last Name" />
+                            <Input  type="text" name="lastName"  placeholder="Last Name" value={lastName} onChange={this.handleChange}/>
                         </Form.Item>
                         <Form.Item label='City' style={widthStyle}>
-                            <Input  name="city"  placeholder="City" />
+                            <Input  type="text" name="city"  placeholder="City" value={city} onChange={this.handleChange}/>
                         </Form.Item>
                         <Form.Item label='Country' style={widthStyle}>
-                            <Input  name="country" placeholder="Country" />
+                            <Input  name="country" placeholder="Country" value={country} onChange={this.handleChange}/>
                         </Form.Item>
                         <Form.Item label='Phone Number' style={widthStyle}>
-                            <Input name="phoneNumber"  placeholder="Phone Number" />
+                            <Input name="phoneNumber"  placeholder="Phone Number" value={phoneNumber} onChange={this.handleChange} />
                         </Form.Item>
                         <Form.Item label='Email' style={widthStyle}>
-                            <Input name="email"  placeholder="Email" />
+                            <Input name="email"  placeholder="Email" value={email} onChange={this.handleChange}/>
                         </Form.Item>
-                        <Form.Item label='Linked In Profile' style={widthStyle}>
-                            <Input name="linkedinAddress"  placeholder="Linked In Profile" />
+                        <Form.Item label='Linked In Address' style={widthStyle}>
+                            <Input name="linkedinAddress"  placeholder="Linked In Address" value={linkedinAddress} onChange={this.handleChange}/>
                         </Form.Item>
                         <Form.Item label='Business Website' style={widthStyle}>
-                            <Input name="businessWebsite"  placeholder="Business Website" />
+                            <Input name="businessWebsite"  placeholder="Business Website" value={businessWebsite} onChange={this.handleChange}/>
                         </Form.Item>
 
                         <Form.Item>
@@ -103,3 +158,4 @@ class ProfileForm extends React.Component {
 
 
 export default (ProfileForm);
+//export default qlgraph(queries.mutation.updateProfile)(ProfileForm);
