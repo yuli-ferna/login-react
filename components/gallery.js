@@ -126,17 +126,8 @@ class Gallery extends Component {
                                     return(
                                         <div className="responsive" key={data.public_id} style={{margin:"5px"}}>
                                             <div className="img">
-                                                <a target="_blank" href={`https://res.cloudinary.com/dqvbgvuoe/video/upload/${data.public_id}.wmv`}>
-                                                    <Video publicId={data.public_id}>
-                                                        <Transformation
-                                                           crop="fill"
-                                                           gravity="faces"
-                                                           width="150"
-                                                           height="150"
-                                                           dpr="auto"
-                                                           responsive_placeholder="blank"
-                                                        />
-                                                    </Video>
+                                                <a target="_blank" href={`https://res.cloudinary.com/dqvbgvuoe/video/upload/${data.public_id}.mov`}>
+                                                    <Video publicId={data.public_id} width="150" height="150" controls></Video>
                                                 </a>   
                                             </div>
                                         </div>
