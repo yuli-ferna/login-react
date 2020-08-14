@@ -3,9 +3,9 @@ import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
-// import ControlAudio from './controlAudio/ControlAudio.js';
-// import SkyboxSelect from "./skybox-select";
-// import Logout from "./logout/logout";
+import ControlAudio from './controlAudio/ControlAudio.js';
+import SkyboxSelect from "./skybox-select";
+import Logout from "./logout/logout";
 // import Screenshare from "./screenshare.js";
 
 class NavBarUsers extends React.Component {
@@ -20,7 +20,12 @@ class NavBarUsers extends React.Component {
           childVisible6: false,
           world: false,
           logout: false,
-
+          inputSkySelect:[
+            //Position in skyboxSplit : url
+            {n:'14', url: 'https://assets-test-o-zone.s3.amazonaws.com/assets/textures/skybox/skyboxesPreview/2020skyboxes-Skybox_A10-SBA10_Front.png'},
+            {n:'16', url: 'https://assets-test-o-zone.s3.amazonaws.com/assets/textures/skybox/skyboxesPreview/2020skyboxes-Skybox_A11-SBA11_Front.png'},
+            {n:'22', url: 'https://assets-test-o-zone.s3.amazonaws.com/assets/textures/skybox/skyboxesPreview/2020skyboxes-Skybox_A0-Front.png'},
+          ]
         }
       }
       
@@ -104,19 +109,19 @@ class NavBarUsers extends React.Component {
                         visible={this.state.gallery }
                         close = {this.closeChildVisible.bind(this, 'gallery')}
                         /> 
-                        {/*<ControlAudio 
+                        <ControlAudio 
                         visible={this.state.audio }
                         close = {this.closeChildVisible.bind(this, 'audio')}
                         />
                         <SkyboxSelect 
                         visible={this.state.sky }
                         close = {this.closeChildVisible.bind(this, 'sky')}
-                        items={[16, 14, 22]}
+                        items={this.state.inputSkySelect}
                         /> 
                         <Logout 
                         visible={this.state.logout }
                         close = {this.closeChildVisible.bind(this, 'logout')}
-                        />
+                        />{/*
                          <Screenshare 
                         visible={this.state.childVisible6 }
                         close = {this.closeChildVisible.bind(this, 'childVisible6')}
