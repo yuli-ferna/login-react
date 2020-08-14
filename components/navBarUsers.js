@@ -5,24 +5,29 @@ import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
 // import ControlAudio from './controlAudio/ControlAudio.js';
 // import SkyboxSelect from "./skybox-select";
+// import Logout from "./logout/logout";
+// import Screenshare from "./screenshare.js";
+
 class NavBarUsers extends React.Component {
     constructor() {
         super();
         this.state = {
-          childVisible1: false,
+          profile: false,
           childVisible2: false,
-          childVisible3: false,
-          childVisible4: false,
-          childVisible5: false,
+          gallery: false,
+          audio: false,
+          sky: false,
           childVisible6: false,
-          childVisible7: false,
-          childVisible8: false,
+          world: false,
+          logout: false,
 
         }
       }
       
     onClick = ({ key }) => {
+
       this.setState({ [key]: true });
+      
     };  
 
     closeChildVisible = (key) => {
@@ -30,22 +35,46 @@ class NavBarUsers extends React.Component {
       this.setState({ [key]: false });
     
     }
-
+    
     render(){
         const menu = (
             <Menu onClick={this.onClick} >
-                    <Menu.Item key="childVisible1">Profile</Menu.Item>
-                    <Menu.Item key="childVisible3">Gallery</Menu.Item> 
-                    <Menu.Item key="childVisible4">Audio</Menu.Item> 
-                    <Menu.Item key="childVisible5">Change Sky</Menu.Item> 
-                    <Menu.Item key="childVisible7">Change Scene</Menu.Item> 
-                    <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item> 
-                    <Menu.Item key="childVisible8">Logout</Menu.Item> 
+              <Menu.ItemGroup key="m1" title="My Stuff">
+                <Menu.Item key="profile">Profile</Menu.Item>
+                {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
+                <Menu.Item key="addToMyGallery">Add to my gallery</Menu.Item> 
+                <Menu.Item key="gallery">View or share my gallery</Menu.Item> 
+                <Menu.Item key="chat">Chat</Menu.Item> 
+              </Menu.ItemGroup>
+
+              <Menu.ItemGroup key="m2" title="Controls">
+                <Menu.Item key="stream">Video/Audio Stream</Menu.Item> 
+
+                <Menu.Item key="buttonsTwilio">
+                  <Button>Video</Button>
+                  <Button>Mic</Button>
+                  <Button>Chat</Button>
+                </Menu.Item> 
+
+                <Menu.Item key="addJoin">Add Join Room</Menu.Item> 
+                <Menu.Item key="muteRoom">Mute Room</Menu.Item> 
+                <Menu.Item key="disableVideo">Disable Video</Menu.Item> 
+                <Menu.Item key="screenShare">Screen Share</Menu.Item> 
+                <Menu.Item key="avatarSelector">Avatar Selector</Menu.Item> 
+                <Menu.Item key="audio">Audio</Menu.Item> 
+                <Menu.Item key="sky">Change Sky</Menu.Item> 
+                <Menu.Item key="world">Change World</Menu.Item> 
+                <Menu.Item key="donate">Donate</Menu.Item>  
+                <Menu.Item key="logout">Logout</Menu.Item>  
+              </Menu.ItemGroup>
+
+                {/* <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item>   */}
             </Menu>
           );
 
         return(
             <div>
+                
                 <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft" className='textAldrich'>
                     <Button
                         style={{
@@ -64,30 +93,34 @@ class NavBarUsers extends React.Component {
                 
                 <div>
                         <ProfileForm 
-                        visible={this.state.childVisible1 }
-                        close = {this.closeChildVisible.bind(this, 'childVisible1')}
+                        visible={this.state.profile }
+                        close = {this.closeChildVisible.bind(this, 'profile')}
                         /> 
                         {/* <ProfilePng 
                         visible={this.state.childVisible2 }
                         close = {this.closeChildVisible.bind(this, 'childVisible2')}
                         />  */}
                         <Gallery 
-                        visible={this.state.childVisible3 }
-                        close = {this.closeChildVisible.bind(this, 'childVisible3')}
+                        visible={this.state.gallery }
+                        close = {this.closeChildVisible.bind(this, 'gallery')}
                         /> 
-                        <ControlAudio 
-                        visible={this.state.childVisible4 }
-                        close = {this.closeChildVisible.bind(this, 'childVisible4')}
+                        {/*<ControlAudio 
+                        visible={this.state.audio }
+                        close = {this.closeChildVisible.bind(this, 'audio')}
                         />
                         <SkyboxSelect 
-                        visible={this.state.childVisible5 }
-                        close = {this.closeChildVisible.bind(this, 'childVisible5')}
+                        visible={this.state.sky }
+                        close = {this.closeChildVisible.bind(this, 'sky')}
                         items={[16, 14, 22]}
                         /> 
-                        {/* <ChangeScene 
+                        <Logout 
+                        visible={this.state.logout }
+                        close = {this.closeChildVisible.bind(this, 'logout')}
+                        />
+                         <Screenshare 
                         visible={this.state.childVisible6 }
                         close = {this.closeChildVisible.bind(this, 'childVisible6')}
-                        />  */}
+                        /> */}
                 </div>
 
             </div>

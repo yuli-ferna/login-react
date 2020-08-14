@@ -63,8 +63,8 @@ class Gallery extends Component {
         return (
             <div className="main">
                 <Modal
-                    visible={this.state.visible}
-                    onCancel={this.onCancel.bind(this)}
+                    visible={this.props.visible}
+                    onCancel={this.props.close}
                     footer={null}
                     keyboard={false}
                     maskClosable={false}
