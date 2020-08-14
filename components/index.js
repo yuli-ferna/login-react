@@ -24,7 +24,7 @@ import classnames from "classnames";
 // import Scene from "./scene.js";
 import ProfileForm from "./profile.js"
 import ProfilePng from "./profilePng.js"
-import Photo02 from "./photo02.js"
+
 import NavBarUsers from "./navBarUsers.js"
 import Images from "./images.js"
 import Gallery from "./gallery.js"
@@ -185,6 +185,11 @@ class Root extends React.Component {
             //   "Camp 13",
             //   "Camp 14",
             // ]
+          },
+          {
+            name: "LEARN MORE",
+            link: "https://metaburn.wixsite.com/metaburn"
+            
           },
     
     
