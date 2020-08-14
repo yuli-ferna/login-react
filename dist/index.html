@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>OZONE UNIVERSE</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     <link rel="icon" href=".\assets\Facebook_Logo_OZONE_UNIVERSE-04.jpg" type="image/x-icon">
   </head>
   <body>
@@ -11,5 +12,28 @@
     </div>
     <script src="main.js" charset="utf-8"></script>  
     <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+    <!-- coockie consent -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "rgb(45, 18, 95)",
+          "text": "#cfcfe8"
+        },
+        "button": {
+          "background": "rgb(54, 178, 221)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "link": "Cookies policy",
+        "href": "https://assets-test-o-zone.s3.amazonaws.com/assets/legaldocs/COOKIES05_2020.docx.pdf",
+        "message": "This website uses cookies to ensure you get the best experience on our website. "
+        + '<a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://assets-test-o-zone.s3.amazonaws.com/assets/legaldocs/Terms05_2020.docx.pdf" rel="noopener noreferrer nofollow" target="_blank">Terms and Conditions</a> ' 
+        + '<a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="https://assets-test-o-zone.s3.amazonaws.com/assets/legaldocs/PRIVACY05_2020.docx.pdf" target="_blank">Privacy</a>'
+      }
+    });
+    </script>
   </body>
 </html>
