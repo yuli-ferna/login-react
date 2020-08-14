@@ -26,6 +26,7 @@ class RegistrationForm extends React.Component {
     render() {
         // const { userCreated, showError, error } = this.state;
         // const { getFieldDecorator } = this.props.form;
+        const { metaburn } = this.props;
 
         const tailFormItemLayout = {
         wrapperCol: {
@@ -40,7 +41,8 @@ class RegistrationForm extends React.Component {
         }
         };
 
-        
+        const heightInput = metaburn ? 40 : 50;
+
 
         return (
         <div>
@@ -69,7 +71,7 @@ class RegistrationForm extends React.Component {
                     }
                 ]
                 })( */}
-                <Input style={{ height: 50 }} placeholder="Username" />
+                <Input style={{ height: heightInput }} placeholder="Username" />
                 {/* )} */}
             </Form.Item>
             <Form.Item>
@@ -85,7 +87,7 @@ class RegistrationForm extends React.Component {
                     }
                 ]
                 })( */}
-                <Input style={{ height: 50 }} placeholder="Real Name" />
+                <Input style={{ height: heightInput }} placeholder="Real Name" />
               {/*  )}*/}
             </Form.Item>
             <Form.Item>
@@ -101,7 +103,7 @@ class RegistrationForm extends React.Component {
                     }
                 ]
                 })( */}
-                <Input style={{ height: 50 }} placeholder="E-Mail" />
+                <Input style={{ height: heightInput }} placeholder="E-Mail" />
                 {/*)}*/}
             </Form.Item>
             <Form.Item hasFeedback>
@@ -117,7 +119,7 @@ class RegistrationForm extends React.Component {
                 ]
                 })( */}
                 <Input.Password
-                    style={{ height: 50 }}
+                    style={{ height: heightInput }}
                     placeholder="Password"
                 />
                 {/* )} */}
@@ -135,7 +137,7 @@ class RegistrationForm extends React.Component {
                 ]
                 })( */}
                 <Input.Password
-                    style={{ height: 50 }}
+                    style={{ height: heightInput }}
                     onBlur={this.handleConfirmBlur}
                     placeholder="Confirm"
                 />
@@ -144,13 +146,13 @@ class RegistrationForm extends React.Component {
             <Form.Item {...tailFormItemLayout}>
                 <Button
                 style={{
-                    height: 50,
+                    height: heightInput,
                     width: "100%",
                     fontWeight: "bold",
                     backgroundColor: 'rgba(99,37,201,1)',
                     borderColor: 'transparent'
-                }}
-                // className={'textAldrich'}
+                  }}
+                  className={'textAldrich'}
                 // loading={this.state.loading}
                 type="primary"
                 htmlType="submit"

@@ -41,138 +41,160 @@ class Root extends React.Component {
     const liClasses = "login-form root form";
 
     const propsMetaburn = {
-      logoMini:
-        "https://assets-test-o-zone.s3.amazonaws.com/assets/Landing+page/mfe/mfe-METABURN/logos/logo.jpeg",
-      logo:
-        "https://assets-test-o-zone.s3.amazonaws.com/assets/Landing+page/mfe/mfe-METABURN/logos/logo.jpeg",
+      logoMini: "https://assets-test-o-zone.s3.amazonaws.com/assets/Landing+page/mfe/mfe-METABURN/logos/logo.jpeg",
+      logo: "https://assets-test-o-zone.s3.amazonaws.com/assets/textures/accessories/metaburn.png",
       title: "METABURN",
       titleMetaburn: "WELCOME HOME",
       publicity: false,
-      partners: true,
+      partners: false,
       subtitle: 'MetaBurn 2020: "The Bridge Experience"',
       metaburn: true,
       list: [
-        {
-          name: "PLAYA PLAN-IT",
-          li: [
-            "The Ten Principles",
-            "Tech Q's",
-            "Avatars",
-            "Camps",
-            "Art Cars",
-            "heARTery",
-          ],
-        },
-        {
-          name: "METABURN 2020 Agenda",
-          li: [
-            "EFFIGIES",
-            "EVENTS CALENDAR",
-            "META VIEW WIKI",
-            "GOOGLE CALENDAR",
-          ],
-        },
-        {
-          name: "SIGN UP / REGISTER FOR FREE",
-        },
-        {
-          name: "ABOUT",
-          li: ["Why", "Who", "What", "Where", "When", "How", "Regionals"],
-        },
-        {
-          name: "VOLUNTEERS",
-          li: ["STAFF", "PROJECTS", "LEADS", "DEPARTMENTS"],
-        },
-
-        {
-          name: "TOWNHALL",
-          li: ["PRESS SIGN UP SPATIAL WIKI", "MEDIA COVERAGE", "BM PRINCIPLES"],
-        },
-
-        {
-          name: "POLICIES",
-          li: [
-            "TERMS OF SERVICE",
-            "COMMUNITY STANDARDS",
-            "PLAYA AESTHETICS",
-            "INFRASTRUCTURE POLICIES",
-            "WEBSITE TERMS OF SERVICE",
-            "MOZILLA HUBS",
-            "OZONE UNIVERSE",
-          ],
-        },
-        {
-          name: "CONTACT US",
-          li: [
-            "EMAIL",
-            "FACEBOOK",
-            "TWITCH",
-            "TWITTER",
-            "WHATS APP",
-            "DISCORD",
-            "INSTAGRAM",
-            "heARTery",
-            "CURATION",
-          ],
-        },
-        {
-          name: "APPLICATION - ART GRANT",
-          li: [
-            "ARTISTS",
-            "VJ",
-            "DJ",
-            "PRODUCER",
-            "CREATIVE",
-            "SOFTWARE",
-            "ADMIN",
-            "XR/VR/AR",
-          ],
-        },
-        {
-          name: "JOIN META BURN",
-          li: [
-            "APPLICATION - SIGN UP",
-            "SOUND CAMPS + STAGE",
-            "VJ + STREAM BOOTH",
-            "DMV ART CARS",
-            "PRESENTATION STATIONS",
-            "PLATONIC SOLID EXHIBIT",
-            "THE BRIDGE DNA PORTALS",
-          ],
-        },
-        {
-          name: "CAMPS",
-          li: [
-            "APPLICATION - SIGN UP",
-            "THE MAN",
-            "THE TEMPLE",
-            "CENTER CAMP",
-            "heARTery",
-            "PLAYA SCHOOL & PRINCIPLES",
-            "META VIEWS WIKI - SIGNS/SYMBOLS",
-            "DEPARTMENT OF MUTANT VEHICLES",
-            "Camp 1",
-            "Camp 2",
-            "Camp 3",
-            "Camp 4",
-            "Camp 5",
-            "Camp 6",
-            "Camp 7",
-            "Camp 8",
-            "Camp 9",
-            "Camp 10",
-            "Camp 11",
-            "Camp 12",
-            "Camp 13",
-            "Camp 14",
-          ],
-        },
+        /*  {
+            name: "PLAYA PLAN-IT",
+            li: [
+              "The Ten Principles",
+              "Tech Q's",
+              "Avatars",
+              "Camps",
+              "Art Cars",
+              "heARTery",
+            ]
+          },
+          {
+            name: "METABURN 2020 Agenda",
+            li: [
+              "EFFIGIES",
+              "EVENTS CALENDAR",
+              "META VIEW WIKI",
+              "GOOGLE CALENDAR",
+            ]
+          },
+          {
+            name: "SIGN UP / REGISTER FOR FREE",
+          },
+          {
+            name: "ABOUT",
+            li: [
+              "Why",
+              "Who",
+              "What",
+              "Where",
+              "When",
+              "How",
+              "Regionals",
+            ]
+          },*/
+          {
+            name: "VOLUNTEERS",
+            link: "https://support358346.typeform.com/to/rvLHBSFW"
+            // li: [
+            //   "STAFF",
+            //   "PROJECTS",
+            //   "LEADS",
+            //   "DEPARTMENTS",
+    
+            // ]
+          },
+    /*
+          {
+            name: "TOWNHALL",
+            li: [
+    
+              "PRESS SIGN UP SPATIAL WIKI",
+              "MEDIA COVERAGE",
+              "BM PRINCIPLES",
+            ]
+          },
+    
+          {
+            name: "POLICIES",
+            li: [
+              "TERMS OF SERVICE",
+              "COMMUNITY STANDARDS",
+              "PLAYA AESTHETICS",
+              "INFRASTRUCTURE POLICIES",
+              "WEBSITE TERMS OF SERVICE",
+              "MOZILLA HUBS",
+              "OZONE UNIVERSE",
+            ]
+          },
+          {
+            name: "CONTACT US",
+            li: [
+              "EMAIL",
+              "FACEBOOK",
+              "TWITCH",
+              "TWITTER",
+              "WHATS APP",
+              "DISCORD",
+              "INSTAGRAM",
+              "heARTery",
+              "CURATION",
+            ]
+          },
+          {
+            name: "APPLICATION - ART GRANT",
+            li: [
+              "ARTISTS",
+              "VJ",
+              "DJ",
+              "PRODUCER",
+              "CREATIVE",
+              "SOFTWARE",
+              "ADMIN",
+              "XR/VR/AR",
+            ]
+          },
+          {
+            name: "JOIN META BURN",
+            li: [
+              "APPLICATION - SIGN UP",
+              "SOUND CAMPS + STAGE",
+              "VJ + STREAM BOOTH",
+              "DMV ART CARS",
+              "PRESENTATION STATIONS",
+              "PLATONIC SOLID EXHIBIT",
+              "THE BRIDGE DNA PORTALS",
+            ]
+          },*/
+          {
+            name: "CAMPS",
+            link: "https://support358346.typeform.com/to/rvLHBSFW"
+            // li: [
+            //   "APPLICATION - SIGN UP",
+            //   "THE MAN",
+            //   "THE TEMPLE",
+            //   "CENTER CAMP",
+            //   "heARTery",
+            //   "PLAYA SCHOOL & PRINCIPLES",
+            //   "META VIEWS WIKI - SIGNS/SYMBOLS",
+            //   "DEPARTMENT OF MUTANT VEHICLES",
+            //   "Camp 1",
+            //   "Camp 2",
+            //   "Camp 3",
+            //   "Camp 4",
+            //   "Camp 5",
+            //   "Camp 6",
+            //   "Camp 7",
+            //   "Camp 8",
+            //   "Camp 9",
+            //   "Camp 10",
+            //   "Camp 11",
+            //   "Camp 12",
+            //   "Camp 13",
+            //   "Camp 14",
+            // ]
+          },
+    
+    
+    
       ],
     };
 
     return <Login {...propsMetaburn}  />;
     // return <LoginOld  />;
-    // return <NavBarUsers/>
+    return <NavBarUsers/>
     }
 
 }
