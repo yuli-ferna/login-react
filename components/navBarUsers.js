@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import "./scss/ui.scss";
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
@@ -77,21 +78,22 @@ class NavBarUsers extends React.Component {
             </Menu>
           );
 
+          const buttonNeu = {
+            height: 35,
+            width: 100,
+            fontWeight: "bold",
+            backgroundColor: "transparent",
+            boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+            borderRadius: '20px',
+            borderColor: 'transparent'
+          };
+
         return(
             <div>
                 
-                <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft" className='textAldrich'>
-                    <Button
-                        style={{
-                            height: 50,
-                            fontWeight: "bold",
-                            backgroundColor: 'rgba(99,37,201,1)',
-                            borderColor: 'transparent'
-                        }}
-                        type="primary"
-                        className='textAldrich'
-                        >
-                        <Icon type="menu" style={{ fontSize: '26px' }}/>    
+                <Dropdown overlay={menu} trigger={['click']} className='textAldrich'>
+                    <Button  style={buttonNeu}>
+                      <Icon type="menu" style={{ fontSize: '20px', color: 'rgba(0, 0, 0, 0.45)' }}/>  
                     </Button>
                 </Dropdown>
 

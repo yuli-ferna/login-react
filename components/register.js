@@ -149,12 +149,13 @@ class RegistrationForm extends React.Component {
                     height: heightInput,
                     width: "100%",
                     fontWeight: "bold",
-                    backgroundColor: 'rgba(99,37,201,1)',
+                    boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+                    borderRadius: '20px',
                     borderColor: 'transparent'
                   }}
                   className={'textAldrich'}
                 // loading={this.state.loading}
-                type="primary"
+                //type="primary"
                 htmlType="submit"
                 >
                 Register

@@ -132,6 +132,18 @@ const classes = {
     // justifyContent: 'flex-end',
     // alignItems: 'center'
   },
+
+  contentButtonsNeu: {
+    height: 35,
+    width: '100%',
+    color: "rgba(255, 255, 255, 0.5);",
+    fontWeight: "bold",
+    backgroundColor: "transparent",
+    boxShadow: ' 6px 6px 10px 0 rgba(0, 0, 0, 0.2), -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+    borderRadius: '20',
+    borderColor: 'transparent'
+  },
+
   messageChromeText:{
     margin: 'auto',
     color:'red'

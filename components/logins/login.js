@@ -5,6 +5,8 @@ import { Form, Icon, Input, Button, Row, Col, Layout, Menu, Modal, InputNumber }
 import "antd/dist/antd.css";
 import classnames from "classnames";
 import RegisterForm from "../register.js";
+import CountDown from "../countDown.js";
+import AdultCheck from "../adultCheck.js";
 
 import styles from "../formCard.js";
 import Logos from "../logos.js";
@@ -79,12 +81,12 @@ class Login extends React.Component {
                     <Menu.Item style={{ backgroundColor: 'transparent', padding: "0px" }}>
                     <div style={{ lineHeight: '64px' }}>
                     <Button
-                            type="primary"
+                          //  type="primary"
                             htmlType="submit"
                             className={classnames(
-                            classes.actionButton,
-                            "login-form-button",
-                            classes.inputNavbar,
+                            classes.contentButtonsNeu,
+                           // "login-form-button",
+                          //  classes.inputNavbar,
                             'textAldrich'
                             )}
                         // onClick = { () => setDonateModalVisible(true)}
@@ -195,13 +197,14 @@ class Login extends React.Component {
                             </Form.Item>
                             <Form.Item>
                             <Button
-                                type="primary"
+                             //   type="primary"
                                 htmlType="submit"
                                 // loading={props.state.loading}
                                 className={classnames(
-                                classes.actionButton,
-                                "login-form-button",
-                                classes.inputNavbar,
+                                classes.contentButtonsNeu,    
+                              //  classes.actionButton,
+                              //  "login-form-button",
+                              //  classes.inputNavbar,
                                 'textAldrich'
                                 )}
                             >
@@ -232,12 +235,16 @@ class Login extends React.Component {
                     </Row>
                     </Menu.Item>
                 </Menu>
-
+                
                 </Header>
+                
                 {props.metaburn &&
+
+                
                 <div
                     className="logo-metaburn"
                 >
+                    <AdultCheck/>
                     <img src={props.logo} style={{
                     // height: "50vh",
                     /*minHeight: "400px",
@@ -245,10 +252,12 @@ class Login extends React.Component {
                     }} />
                 </div>
                 }
+                
                 <Content
                 style={{
                     zIndex: 2
                 }}
+                
                 >
 
                 {/* Content */}
@@ -338,6 +347,7 @@ class Login extends React.Component {
                             "login-form-button",
                             classes.input,
                             classes.formButton,
+                           // classes.contentButtonsNeu,
                             'textAldrich'
                             )}
                         >
@@ -419,7 +429,8 @@ class Login extends React.Component {
                     </Col>
                     ) : (
                         props.metaburn
-                        &&
+                        && 
+                        
                         <Col span={8} xs={20} sm={20} md={20} lg={20} xl={14} xxl={14}
                         style={{
                             marginTop: 20,
@@ -427,10 +438,15 @@ class Login extends React.Component {
                             display: 'flex',
                             flexDirection: 'column',
                         }}>
+                         
                         <ul className="list-unstyled-drop">
                             {liMeta}
                         </ul>
+                       
+                       
                         </Col>
+                         
+                         
                     )
                     }
 
@@ -484,7 +500,7 @@ class Login extends React.Component {
                         <Button type="primary" size={'large'} className={classes.formButton}> Order form </Button>
                         </Col> */}
                     </Row>
-
+                   
                     <RegisterForm metaburn={props.metaburn} />
                     </Col>
                 </Row>
