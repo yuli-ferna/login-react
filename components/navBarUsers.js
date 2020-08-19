@@ -4,6 +4,7 @@ import "./scss/ui.scss";
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
 import Gallery from './gallery.js';
+import ControlPanel from './controlPanel.js';
 import ControlAudio from './controlAudio/ControlAudio.js';
 import SkyboxSelect from "./skybox-select";
 import Logout from "./logout/logout";
@@ -19,8 +20,17 @@ class NavBarUsers extends React.Component {
           audio: false,
           sky: false,
           childVisible6: false,
+          controlPanel: false,
           world: false,
+          donate: false,
           logout: false,
+          //twilio
+          mic: true,
+          video: true,
+          chat: true,
+          screenShare: false,
+          xr: false,
+          supportedXR: true, 
           inputSkySelect:[
             //Position in skyboxSplit : url
             {n:'14', url: 'https://assets-test-o-zone.s3.amazonaws.com/assets/textures/skybox/skyboxesPreview/2020skyboxes-Skybox_A10-SBA10_Front.png'},
@@ -36,13 +46,27 @@ class NavBarUsers extends React.Component {
       
     };  
 
+    changeState = (key) => {
+
+      this.setState({ [key]: !this.state[key] });
+
+    }
+
     closeChildVisible = (key) => {
     
       this.setState({ [key]: false });
     
     }
-    
+    openControlPanel = () =>{
+      this.setState({ controlPanel: true });
+      
+    }
+
     render(){
+      const { mic, video, chat, xr, supportedXR, screenShare } = this.state;
+      const controlPanel = (
+        <button style={{position: 'relative', float: 'right',opacity: 1.0}} onDoubleClick={this.openControlPanel} >control</button>
+      );
         const menu = (
             <Menu onClick={this.onClick} >
               <Menu.ItemGroup key="m1" title="My Stuff">
@@ -54,19 +78,36 @@ class NavBarUsers extends React.Component {
               </Menu.ItemGroup>
 
               <Menu.ItemGroup key="m2" title="Controls">
-                <Menu.Item key="stream">Video/Audio Stream</Menu.Item> 
 
-                <Menu.Item key="buttonsTwilio">
-                  <Button>Video</Button>
-                  <Button>Mic</Button>
-                  <Button>Chat</Button>
+                <Menu.Item disabled key="buttonsTwilio">
+                  <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around'}}>
+                  <p className="labelButtonTwilio">Video</p>
+                  <p className="labelButtonTwilio">Mic</p>
+                  <p className="labelButtonTwilio">Chat</p>
+                  <Button id="video_button" className="labelButtonTwilio" 
+                  onClick={() =>{ this.changeState('video')}}>
+                    {video ? 'Off' : 'On'}
+                  </Button>
+                  <Button id="mic_button" className="labelButtonTwilio" 
+                  onClick={() =>{ this.changeState('mic')}}> 
+                    {mic ? 'Off' : 'On'}
+                  </Button>
+                  <Button id="chat_button" className="labelButtonTwilio" 
+                  onClick={() =>{  this.changeState('chat')}}>
+                    {chat ? 'Off' : 'On'}
+                  </Button>
+                  </div>
                 </Menu.Item> 
 
-                <Menu.Item key="addJoin">Add Join Room</Menu.Item> 
-                <Menu.Item key="muteRoom">Mute Room</Menu.Item> 
-                <Menu.Item key="disableVideo">Disable Video</Menu.Item> 
-                <Menu.Item key="screenShare">Screen Share</Menu.Item> 
-                <Menu.Item key="avatarSelector">Avatar Selector</Menu.Item> 
+                <Menu.Item 
+                // onClick={() => {this.changeScreenShare()}}
+                >{screenShare ? 'Off ScreenShare' : 'On ScreenShare'}</Menu.Item> 
+                <Menu.Item disabled key="avatarSelector">Avatar Selector</Menu.Item> 
+                <Menu.Item disabled={!supportedXR} 
+                onClick={() =>{  this.changeState('xr')}}
+                >
+                  {supportedXR ? (xr ? 'Exit XR' : 'Enter XR') : 'No XR'}
+                </Menu.Item> 
                 <Menu.Item key="audio">Audio</Menu.Item> 
                 <Menu.Item key="sky">Change Sky</Menu.Item> 
                 <Menu.Item key="world">Change World</Menu.Item> 
@@ -97,6 +138,7 @@ class NavBarUsers extends React.Component {
                     </Button>
                 </Dropdown>
 
+                {controlPanel}
                 
                 <div>
                         <ProfileForm 
@@ -123,7 +165,12 @@ class NavBarUsers extends React.Component {
                         <Logout 
                         visible={this.state.logout }
                         close = {this.closeChildVisible.bind(this, 'logout')}
-                        />{/*
+                        />
+                        <ControlPanel 
+                        visible={this.state.controlPanel }
+                        close = {this.closeChildVisible.bind(this, 'controlPanel')}
+                        />
+                        {/*
                          <Screenshare 
                         visible={this.state.childVisible6 }
                         close = {this.closeChildVisible.bind(this, 'childVisible6')}
