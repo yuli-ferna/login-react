@@ -107,7 +107,7 @@ class ProfileForm extends React.Component {
                 <Modal
                     keyboard={false}
                     maskClosable={false}
-                    visible={this.state.visible}
+                    visible={this.props.visible}
                     onCancel={this.props.close}
                     destroyOnClose={true}
                     footer={null}
