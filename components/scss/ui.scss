@@ -27,6 +27,7 @@
     margin: 5px;
     vertical-align: middle;
     text-align: center !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
 }
 .labelButtonTwilio {
     width: 33%;
@@ -34,3 +35,18 @@
     margin-bottom: 0px;
     color: rgba(0, 0, 0, 0.65);
 }
+
+.buttonNeu {
+    height: 35px;
+    width: 100px;
+    font-weight: bold;
+    background-color: transparent !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
+    border-radius: 20px !important;
+    border-color: transparent !important;
+}
+.dropDownNeu {
+    box-shadow:  6px 6px 10px 0 rgba(0, 0, 0, 0.2), -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+

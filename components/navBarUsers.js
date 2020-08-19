@@ -68,18 +68,19 @@ class NavBarUsers extends React.Component {
         <button style={{position: 'relative', float: 'right',opacity: 1.0}} onDoubleClick={this.openControlPanel} >control</button>
       );
         const menu = (
-            <Menu onClick={this.onClick} >
-              <Menu.ItemGroup key="m1" title="My Stuff">
-                <Menu.Item key="profile">Profile</Menu.Item>
+         
+            <Menu onClick={this.onClick}>
+              <Menu.ItemGroup key="m1" title="My Stuff" style={{fontWeight: 'bold'}}>
+                <Menu.Item key="profile" className="dropDownNeu">Profile</Menu.Item>
                 {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
-                <Menu.Item key="addToMyGallery">Add to my gallery</Menu.Item> 
-                <Menu.Item key="gallery">View or share my gallery</Menu.Item> 
-                <Menu.Item key="chat">Chat</Menu.Item> 
+                <Menu.Item key="addToMyGallery" className="dropDownNeu">Add to my gallery</Menu.Item> 
+                <Menu.Item key="gallery" className="dropDownNeu">View or share my gallery</Menu.Item> 
+                <Menu.Item key="chat" className="dropDownNeu">Chat</Menu.Item> 
               </Menu.ItemGroup>
 
-              <Menu.ItemGroup key="m2" title="Controls">
+              <Menu.ItemGroup key="m2" title="Controls" style={{fontWeight: 'bold'}}>
 
-                <Menu.Item disabled key="buttonsTwilio">
+                <Menu.Item disabled key="buttonsTwilio" className="dropDownNeu">
                   <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around'}}>
                   <p className="labelButtonTwilio">Video</p>
                   <p className="labelButtonTwilio">Mic</p>
@@ -99,41 +100,33 @@ class NavBarUsers extends React.Component {
                   </div>
                 </Menu.Item> 
 
-                <Menu.Item 
+                <Menu.Item className="dropDownNeu"
                 // onClick={() => {this.changeScreenShare()}}
                 >{screenShare ? 'Off ScreenShare' : 'On ScreenShare'}</Menu.Item> 
-                <Menu.Item disabled key="avatarSelector">Avatar Selector</Menu.Item> 
-                <Menu.Item disabled={!supportedXR} 
+                <Menu.Item disabled key="avatarSelector" className="dropDownNeu">Avatar Selector</Menu.Item> 
+                <Menu.Item disabled={!supportedXR} className="dropDownNeu"
                 onClick={() =>{  this.changeState('xr')}}
                 >
                   {supportedXR ? (xr ? 'Exit XR' : 'Enter XR') : 'No XR'}
                 </Menu.Item> 
-                <Menu.Item key="audio">Audio</Menu.Item> 
-                <Menu.Item key="sky">Change Sky</Menu.Item> 
-                <Menu.Item key="world">Change World</Menu.Item> 
-                <Menu.Item key="donate">Donate</Menu.Item>  
-                <Menu.Item key="logout">Logout</Menu.Item>  
+                <Menu.Item key="audio" className="dropDownNeu">Audio</Menu.Item> 
+                <Menu.Item key="sky" className="dropDownNeu">Change Sky</Menu.Item> 
+                <Menu.Item key="world" className="dropDownNeu">Change World</Menu.Item> 
+                <Menu.Item key="donate" className="dropDownNeu">Donate</Menu.Item>  
+                <Menu.Item key="logout" className="dropDownNeu">Logout</Menu.Item>  
               </Menu.ItemGroup>
 
                 {/* <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item>   */}
             </Menu>
+            
           );
 
-          const buttonNeu = {
-            height: 35,
-            width: 100,
-            fontWeight: "bold",
-            backgroundColor: "transparent",
-            boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
-            borderRadius: '20px',
-            borderColor: 'transparent'
-          };
 
         return(
             <div>
                 
-                <Dropdown overlay={menu} trigger={['click']} className='textAldrich'>
-                    <Button  style={buttonNeu}>
+                <Dropdown overlay={menu} trigger={['click']} className='textAldrich'  >
+                    <Button  className="buttonNeu">
                       <Icon type="menu" style={{ fontSize: '20px', color: 'rgba(0, 0, 0, 0.45)' }}/>  
                     </Button>
                 </Dropdown>
