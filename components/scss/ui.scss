@@ -7,3 +7,30 @@
 .iconsContainer{
     text-align: center;
 }
+.controlPanelContainer{
+    position: absolute;
+    background-color: white;
+    width: 40vw;
+    // height: 40vw;
+    text-align: center;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.circleButton {
+    white-space: normal !important;
+    width: 100px;
+    height: 100px !important;
+    border-radius: 50% !important;
+    margin: 5px;
+    vertical-align: middle;
+    text-align: center !important;
+}
+.labelButtonTwilio {
+    width: 33%;
+    text-align: center;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.65);
+}
