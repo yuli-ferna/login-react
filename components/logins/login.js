@@ -339,7 +339,7 @@ class Login extends React.Component {
                         </Form.Item>
                         <Form.Item>
                         <Button
-                            type="primary"
+                           // type="primary"
                             htmlType="submit"
                             // loading={props.state.loading}
                             className={classnames(
@@ -347,9 +347,9 @@ class Login extends React.Component {
                             "login-form-button",
                             classes.input,
                             classes.formButton,
-                           // classes.contentButtonsNeu,
                             'textAldrich'
                             )}
+                            
                         >
                             Log in
                     </Button>

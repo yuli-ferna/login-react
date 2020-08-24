@@ -69,31 +69,31 @@ class NavBarUsers extends React.Component {
       );
         const menu = (
          
-            <Menu onClick={this.onClick}>
-              <Menu.ItemGroup key="m1" title="My Stuff" style={{fontWeight: 'bold'}}>
-                <Menu.Item key="profile" className="dropDownNeu">Profile</Menu.Item>
+            <Menu onClick={this.onClick} className="backMenu">
+              <Menu.ItemGroup key="m1" title="My Stuff" style={{fontWeight: 'bold', textAlign: "center"}}>
+                <Menu.Item key="profile" type="checkbox" className="dropDownNeu">Profile</Menu.Item>
                 {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
                 <Menu.Item key="addToMyGallery" className="dropDownNeu">Add to my gallery</Menu.Item> 
                 <Menu.Item key="gallery" className="dropDownNeu">View or share my gallery</Menu.Item> 
                 <Menu.Item key="chat" className="dropDownNeu">Chat</Menu.Item> 
               </Menu.ItemGroup>
 
-              <Menu.ItemGroup key="m2" title="Controls" style={{fontWeight: 'bold'}}>
+              <Menu.ItemGroup key="m2" title="Controls" style={{fontWeight: 'bold', textAlign: "center"}}>
 
                 <Menu.Item disabled key="buttonsTwilio" className="dropDownNeu">
                   <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around'}}>
                   <p className="labelButtonTwilio">Video</p>
                   <p className="labelButtonTwilio">Mic</p>
                   <p className="labelButtonTwilio">Chat</p>
-                  <Button id="video_button" className="labelButtonTwilio" 
+                  <Button id="video_button" className="labelButtonTwilio dropDownNeu" 
                   onClick={() =>{ this.changeState('video')}}>
                     {video ? 'Off' : 'On'}
                   </Button>
-                  <Button id="mic_button" className="labelButtonTwilio" 
+                  <Button id="mic_button" className="labelButtonTwilio dropDownNeu" 
                   onClick={() =>{ this.changeState('mic')}}> 
                     {mic ? 'Off' : 'On'}
                   </Button>
-                  <Button id="chat_button" className="labelButtonTwilio" 
+                  <Button id="chat_button" className="labelButtonTwilio dropDownNeu" 
                   onClick={() =>{  this.changeState('chat')}}>
                     {chat ? 'Off' : 'On'}
                   </Button>

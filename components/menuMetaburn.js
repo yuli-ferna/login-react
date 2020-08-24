@@ -1,5 +1,7 @@
 import React from "react";
 import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import "./scss/ui.scss";
+import { relative } from "path";
 
 class MenuMetaburn extends React.Component {
     constructor(props) {
@@ -20,49 +22,52 @@ class MenuMetaburn extends React.Component {
 
         return(
             <div>
-               <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-                   <Menu.Item>
+               <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" className="backMenuMetaburn "
+                    style={{ display: 'flex', alignItems: 'center', lineHeight: '64px' }}
+               >
+                   <Menu.Item >
                        <img style={{width: 50, height: 50}} src="https://kindling.burningman.org/wp-content/themes/kindling/img/logo.svg"></img>
                    </Menu.Item>
               
                     <Menu.Item key="gather">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/gather/" target="_blank" rel="noopener noreferrer">
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/gather/" target="_blank" rel="noopener noreferrer">
                             GATHER
                         </Button>
                     </Menu.Item>
                    
                     <Menu.Item key="experience">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/experience/" target="_blank" rel="noopener noreferrer">
+                        <Button className="buttonMetaburnNeu"  href="https://kindling.burningman.org/experience/" target="_blank" rel="noopener noreferrer">
                             EXPERIENCE
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="play">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/play/" target="_blank" rel="noopener noreferrer">
+                    <Menu.Item key="play" >
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/play/" target="_blank" rel="noopener noreferrer">
                             PLAY
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="co-learn">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/co-learn/" target="_blank" rel="noopener noreferrer">
+                    <Menu.Item key="co-learn"> 
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/co-learn/" target="_blank" rel="noopener noreferrer">
                             CO-LEARN
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="ignite">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/ignite/" target="_blank" rel="noopener noreferrer">
+                    <Menu.Item key="ignite" > 
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/ignite/" target="_blank" rel="noopener noreferrer">
                             IGNITE
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="multiverse">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/multiverse/" target="_blank" rel="noopener noreferrer">
+                    <Menu.Item key="multiverse" >
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/multiverse/" target="_blank" rel="noopener noreferrer">
                             MULTIVERSE
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="metaburn">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/">
+                    <Menu.Item key="metaburn" >
+                        <Button  className="buttonMetaburnNeu"  href="https://kindling.burningman.org/">
                             METABURN
                         </Button>
                     </Menu.Item>
-                    <Menu.Item key="donate">
-                        <Button style={{width: 100}} href="https://kindling.burningman.org/" target="_blank" rel="noopener noreferrer">
+                    <Menu.Item key="donate" >
+                        <Button  className="buttonMetaburnNeu" 
+                            href="https://donate.burningman.org/?utm_source=bridge-experience&utm_medium=donate&utm_campaign=multiverse" target="_blank" rel="noopener noreferrer">
                             DONATE
                         </Button>
                     </Menu.Item>

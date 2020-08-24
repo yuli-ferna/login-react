@@ -45,7 +45,7 @@ class AdultCheck extends Component {
                 <h1>Are you over 18?</h1> 
               </div>
               <div style={{display: 'flex', justifyContent: "center"}}>
-                <Button type="primary" onClick={this.hideModal} style={{margin:"5px"}}>Si</Button>
+                <Button type="primary" onClick={this.hideModal} style={{margin:"5px"}}>Yes</Button>
                 <Button  style={{margin:"5px"}}
                   href="https://kindling.burningman.org/" target="_blank">No</Button>
               </div>
