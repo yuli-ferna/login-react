@@ -196,6 +196,26 @@ class Root extends React.Component {
             link: "https://docs.google.com/document/d/1fhhN3OSRdF1K6bqPgNzTUEgVMAvgCu_pXrTVSUhCmeI/edit#heading=h.6n38auugymbj"
             
           },
+          {
+            name: "COMMUNITY MANAGER",
+            link: "https://metaburn.wixsite.com/metaburn/contact"
+            
+          },
+          {
+            name: "PLAYA INFO",
+            link: "https://burningman.org/event/volunteering/teams/playa-info/"
+            
+          },
+          {
+            name: "TEMPLE GUARDIANS",
+            link: "https://templeguardians.burningman.org/"
+            
+          },
+          {
+            name: "GREETERS/TROUBLESHOOTING",
+            link: "https://xrlabs.whereby.com/metaburn"
+            
+          },
     
     
     
