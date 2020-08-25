@@ -29,10 +29,11 @@ class Login extends React.Component {
         liMeta = props.list.map((item, index) => {
             return (
             <li className="drop-down textAldrich" key={index.toString()}>
-                <button onClick={() =>  /*openDropDown(index)*/window.open(item.link,'_blank')}>{item.name}</button>
+                <button  onClick={() =>  /*openDropDown(index)*/window.open(item.link,'_blank')}>{item.name}</button>
                 {item.li && (
                 <ul
                     className="list-unstyled-drop card-dropdown"
+                 
                     id={`dropDown-${index}`}
                 >
                     {item.li.map((itemChild, index) => {
@@ -439,7 +440,7 @@ class Login extends React.Component {
                             flexDirection: 'column',
                         }}>
                          
-                        <ul className="list-unstyled-drop">
+                        <ul className="list-unstyled-drop" >
                             {liMeta}
                         </ul>
                        

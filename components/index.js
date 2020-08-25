@@ -191,6 +191,11 @@ class Root extends React.Component {
             link: "https://metaburn.wixsite.com/metaburn"
             
           },
+          {
+            name: "METABURN TERMS",
+            link: "https://docs.google.com/document/d/1fhhN3OSRdF1K6bqPgNzTUEgVMAvgCu_pXrTVSUhCmeI/edit#heading=h.6n38auugymbj"
+            
+          },
     
     
     
