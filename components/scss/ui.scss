@@ -27,6 +27,7 @@
     margin: 5px;
     vertical-align: middle;
     text-align: center !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
 }
 .labelButtonTwilio {
     width: 33%;
@@ -34,3 +35,60 @@
     margin-bottom: 0px;
     color: rgba(0, 0, 0, 0.65);
 }
+
+.buttonNeu {
+    height: 35px;
+    width: 100px;
+    font-weight: bold;
+    background-color: transparent !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
+    border-radius: 20px !important;
+    border-color: transparent !important;
+}
+
+.backMenu {
+    background-color: rgba(70, 70, 70, 0.12) !important;
+}
+
+.dropDownNeu {
+    box-shadow:  inset -10px -10px 15px  rgba(255, 255, 255, 0.5),  inset 10px 6px 15px  rgba(70, 70, 70, 0.12) !important;
+    border-radius: 20px !important;
+    background-color: transparent !important;
+}
+
+.dropDownNeu:hover {
+    box-shadow:  inset -10px -10px 15px  rgba(255, 255, 255, 0.5), inset 10px 10px 15px  rgba(70, 70, 70, 0.12),
+                 inset -10px -10px 15px  rgba(255, 255, 255, 0.5), inset 10px 10px 115px  rgba(87, 85, 85, 0.12)
+       !important;
+   
+}
+
+
+.backMenuMetaburn {
+    background-color: #001529 !important;
+}
+
+@media (max-width: 992px) { 
+    .backMenuMetaburn{
+        background-color: #ffffff !important;
+    }
+}
+
+.buttonMetaburnNeu {
+    background-color: transparent !important;
+    box-shadow:   6px 6px 10px 0 rgba(0, 0, 0, 0.2),  -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
+    border-radius: 10px !important;
+    border-color: transparent !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+     width: 100px !important;
+}
+
+@media (max-width: 992px) { 
+    .buttonMetaburnNeu{
+        color: #000000 !important; 
+    }
+}
+
+
+
+
