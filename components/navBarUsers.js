@@ -13,6 +13,7 @@ import Logout from "./logout/logout";
 class NavBarUsers extends React.Component {
     constructor() {
         super();
+        window.paintModeActive = false;
         this.state = {
           profile: false,
           childVisible2: false,
@@ -74,7 +75,7 @@ class NavBarUsers extends React.Component {
                 {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
                 <Menu.Item key="addToMyGallery">Add to my gallery</Menu.Item> 
                 <Menu.Item key="gallery">View or share my gallery</Menu.Item> 
-                <Menu.Item key="chat">Chat</Menu.Item> 
+                <Menu.Item key="chat">Text chat</Menu.Item> 
               </Menu.ItemGroup>
 
               <Menu.ItemGroup key="m2" title="Controls">
@@ -83,7 +84,7 @@ class NavBarUsers extends React.Component {
                   <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around'}}>
                   <p className="labelButtonTwilio">Video</p>
                   <p className="labelButtonTwilio">Mic</p>
-                  <p className="labelButtonTwilio">Chat</p>
+                  <p className="labelButtonTwilio">Stream</p>
                   <Button id="video_button" className="labelButtonTwilio" 
                   onClick={() =>{ this.changeState('video')}}>
                     {video ? 'Off' : 'On'}
@@ -108,13 +109,27 @@ class NavBarUsers extends React.Component {
                 >
                   {supportedXR ? (xr ? 'Exit XR' : 'Enter XR') : 'No XR'}
                 </Menu.Item> 
+                <Menu.Item className="dropDownNeu" onClick={() =>{ window.paintModeActive = !window.paintModeActive }}>
+                  {window.paintModeActive ? 'Paint mode OFF' : 'Paint mode ON'}
+                </Menu.Item>
+
                 <Menu.Item key="audio">Audio</Menu.Item> 
                 <Menu.Item key="sky">Change Sky</Menu.Item> 
                 <Menu.Item key="world">Change World</Menu.Item> 
                 <Menu.Item key="donate">Donate</Menu.Item>  
                 <Menu.Item key="logout">Logout</Menu.Item>  
               </Menu.ItemGroup>
-
+              <Menu.ItemGroup key="m3" title="Scenes" style={{fontWeight: 'bold', textAlign: "center"}}>
+                
+                <Menu.Item className="dropDownNeu">LOVE VILLAGE</Menu.Item>  
+                <Menu.Item className="dropDownNeu">ONWARD</Menu.Item>  
+                <Menu.Item className="dropDownNeu">HARMONIZE HUMANITY</Menu.Item>  
+                <Menu.Item className="dropDownNeu">AQUA VENUS</Menu.Item>  
+                <Menu.Item className="dropDownNeu">LOVE BURN</Menu.Item>  
+                <Menu.Item className="dropDownNeu">CONSCIOUS PLAYGROUND</Menu.Item>  
+                <Menu.Item className="dropDownNeu">DEEP PLAYA</Menu.Item>  
+                <Menu.Item className="dropDownNeu">THE MAN</Menu.Item>  
+              </Menu.ItemGroup>
                 {/* <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item>   */}
             </Menu>
           );
