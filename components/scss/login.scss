@@ -38,16 +38,13 @@
       width: 35%;
       >button{
         cursor: pointer;
-         // background: #6325c9;
-         // border: transparent !important;
-          color: rgba(0, 0, 0, 0.65);
+          background: #6325c9;
+          color: #ff0080;
           width: 100%;
-          min-height: 35px;
-
+          min-height: 50px;
           box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
           border-radius: 10px;
           border-color: transparent !important;
-
           &:hover{
               box-shadow:  inset 6px 6px 10px 0 rgba(255, 255, 255, 0.5), inset -6px -6px 10px 0 rgba(0, 0, 0, 0.65);
           }
@@ -151,4 +148,18 @@
 }
 .header-login{
     z-index: 3;
+}
+
+.registerButton{
+   
+    height: 50;
+    width: '100%';
+    color: "#ff0080";
+    background: "#6325c9";
+    box-shadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)';
+    border-radius: '10px';
+            &:hover{
+                background: #6325c9;
+                color: #ff8000;
+            }
 }

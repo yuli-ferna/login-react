@@ -92,7 +92,7 @@ class Login extends React.Component {
                             )}
                         // onClick = { () => setDonateModalVisible(true)}
                         >
-                            Donate
+                            DONATE
                     </Button>
                     
                         {/* <Modal
@@ -209,7 +209,7 @@ class Login extends React.Component {
                                 'textAldrich'
                                 )}
                             >
-                                Log in
+                                LOG IN
                             </Button>
                             </Form.Item>
                             <Form.Item
