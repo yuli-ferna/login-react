@@ -70,22 +70,22 @@ class NavBarUsers extends React.Component {
       );
         const menu = (
          
-            <Menu onClick={this.onClick} className="backMenu">
-              <Menu.ItemGroup key="m1" title="My Stuff" style={{fontWeight: 'bold', textAlign: "center"}}>
-                <Menu.Item key="profile" type="checkbox" className="dropDownNeu">Profile</Menu.Item>
+            <Menu onClick={this.onClick} >
+              <Menu.ItemGroup key="m1" title="MY STUFF" style={{fontWeight: 'bold', textAlign: "center"}}>
+                <Menu.Item key="profile" type="checkbox" className="dropDownNeu buttonSize">PROFILE</Menu.Item>
                 {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
-                <Menu.Item key="addToMyGallery" className="dropDownNeu">Add to my gallery</Menu.Item> 
-                <Menu.Item key="gallery" className="dropDownNeu">View or share my gallery</Menu.Item> 
-                <Menu.Item key="chat" className="dropDownNeu">Text chat</Menu.Item> 
+                <Menu.Item key="addToMyGallery" className="dropDownNeu buttonSize">ADD TO MY GALLERY</Menu.Item> 
+                <Menu.Item key="gallery" className="dropDownNeu buttonSize">VIEW OR SHARE MU GALLERY</Menu.Item> 
+                <Menu.Item key="chat" className="dropDownNeu buttonSize">TEXT CHAT</Menu.Item> 
               </Menu.ItemGroup>
 
-              <Menu.ItemGroup key="m2" title="Controls" style={{fontWeight: 'bold', textAlign: "center"}}>
+              <Menu.ItemGroup key="m2" title="CONTROLS" style={{fontWeight: 'bold', textAlign: "center"}}>
 
                 <Menu.Item disabled key="buttonsTwilio" className="dropDownNeu">
                   <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around'}}>
-                  <p className="labelButtonTwilio">Video</p>
-                  <p className="labelButtonTwilio">Mic</p>
-                  <p className="labelButtonTwilio">Stream</p>
+                  <p className="labelButtonTwilio">VIDEO</p>
+                  <p className="labelButtonTwilio">MIC</p>
+                  <p className="labelButtonTwilio">STREAM</p>
                   <Button id="video_button" className="labelButtonTwilio dropDownNeu" 
                   onClick={() =>{ this.changeState('video')}}>
                     {video ? 'Off' : 'On'}
@@ -103,32 +103,51 @@ class NavBarUsers extends React.Component {
 
                 <Menu.Item className="dropDownNeu"
                 // onClick={() => {this.changeScreenShare()}}
-                >{screenShare ? 'Off ScreenShare' : 'On ScreenShare'}</Menu.Item> 
-                <Menu.Item disabled key="avatarSelector" className="dropDownNeu">Avatar Selector</Menu.Item> 
+                >{screenShare ? 'OFF SCREENSHARE' : 'ON SCREENSHARE'}</Menu.Item> 
+                <Menu.Item disabled key="avatarSelector" className="dropDownNeu buttonSize">AVATAR SELECTOR</Menu.Item> 
                 <Menu.Item disabled={!supportedXR} className="dropDownNeu"
                 onClick={() =>{  this.changeState('xr')}}
                 >
-                  {supportedXR ? (xr ? 'Exit XR' : 'Enter XR') : 'No XR'}
+                  {supportedXR ? (xr ? 'EXIT XR' : 'ENTER XR') : 'NO XR'}
                 </Menu.Item> 
                 <Menu.Item className="dropDownNeu" onClick={() =>{ window.paintModeActive = !window.paintModeActive }}>
-                  {window.paintModeActive ? 'Paint mode OFF' : 'Paint mode ON'}
+                  {window.paintModeActive ? 'PAINT MODE OFF' : 'PAINT MODE ON'}
                 </Menu.Item>
-                <Menu.Item key="audio" className="dropDownNeu">Audio</Menu.Item> 
-                <Menu.Item key="sky" className="dropDownNeu">Change Sky</Menu.Item> 
-                <Menu.Item key="world" className="dropDownNeu">Change World</Menu.Item> 
-                <Menu.Item key="donate" className="dropDownNeu">Donate</Menu.Item>  
-                <Menu.Item key="logout" className="dropDownNeu">Logout</Menu.Item>  
+                <Menu.Item key="audio" className="dropDownNeu buttonSize">AUDIO</Menu.Item> 
+                <Menu.Item key="sky" className="dropDownNeu buttonSize">CHANGE SKY</Menu.Item> 
+                <Menu.Item key="world" className="dropDownNeu buttonSize">CHANGE WORL</Menu.Item> 
+                <Menu.Item key="donate" className="dropDownNeu buttonSize">DONATE</Menu.Item>  
+                <Menu.Item key="logout" className="dropDownNeu buttonSize">LOGOUT</Menu.Item>  
               </Menu.ItemGroup>
-              <Menu.ItemGroup key="m3" title="Scenes" style={{fontWeight: 'bold', textAlign: "center"}}>
+              <Menu.ItemGroup key="m3" title="SCENES" style={{fontWeight: 'bold', textAlign: "center"}}>
                 
-                <Menu.Item className="dropDownNeu">LOVE VILLAGE</Menu.Item>  
-                <Menu.Item className="dropDownNeu">ONWARD</Menu.Item>  
-                <Menu.Item className="dropDownNeu">HARMONIZE HUMANITY</Menu.Item>  
-                <Menu.Item className="dropDownNeu">AQUA VENUS</Menu.Item>  
-                <Menu.Item className="dropDownNeu">LOVE BURN</Menu.Item>  
-                <Menu.Item className="dropDownNeu">CONSCIOUS PLAYGROUND</Menu.Item>  
-                <Menu.Item className="dropDownNeu">DEEP PLAYA</Menu.Item>  
-                <Menu.Item className="dropDownNeu">THE MAN</Menu.Item>  
+                <Menu.Item >
+                  <a  className="dropDownNeu buttonSize" href='https://metaburn.org/camp1' target="_blank" >LOVE VILLAGE</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp2' target="_blank" >MAYAMI</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp3' target="_blank" >ONWARD</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp4' target="_blank" >HARMONIZE HUMANITY</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp6' target="_blank">AQUA VENUS</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp8' target="_blank">LOVE BURN</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/camp11' target="_blank" >CONSCIOUS PLAYGROUND</a>
+                </Menu.Item>  
+                <Menu.Item>
+                  <a className="dropDownNeu buttonSize" href='https://metaburn.org/desert' target="_blank" >DEEP PLAYA</a>
+                </Menu.Item>  
+                <Menu.Item className="dropDownNeu buttonSize">
+                  <a className="dropDownNeu" href='https://metaburn.org/camp15' target="_blank" >THE MAN</a>
+                </Menu.Item>  
               </Menu.ItemGroup>
                 {/* <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item>   */}
             </Menu>
@@ -141,7 +160,7 @@ class NavBarUsers extends React.Component {
                 
                 <Dropdown overlay={menu} trigger={['click']} className='textAldrich'  >
                     <Button  className="buttonNeu">
-                      <Icon type="menu" style={{ fontSize: '20px', color: 'rgba(0, 0, 0, 0.45)' }}/>  
+                      <Icon type="menu" style={{ fontSize: '20px', color: '#ff0080 ' }}/>  
                     </Button>
                 </Dropdown>
 
@@ -156,10 +175,10 @@ class NavBarUsers extends React.Component {
                         visible={this.state.childVisible2 }
                         close = {this.closeChildVisible.bind(this, 'childVisible2')}
                         />  */}
-                        <Gallery 
+                        {/*<Gallery 
                         visible={this.state.gallery }
                         close = {this.closeChildVisible.bind(this, 'gallery')}
-                        /> 
+                        /> */}
                         <ControlAudio 
                         visible={this.state.audio }
                         close = {this.closeChildVisible.bind(this, 'audio')}
