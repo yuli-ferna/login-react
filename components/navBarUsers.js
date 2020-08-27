@@ -160,10 +160,13 @@ class NavBarUsers extends React.Component {
                 
                 <Dropdown overlay={menu} trigger={['click']} className='textAldrich'  >
                     <Button  className="buttonNeu">
-                      <Icon type="menu" style={{ fontSize: '20px', color: '#ff0080 ' }}/>  
+                      <Icon type="menu" style={{ fontSize: '20px', color: '#ff0080 ' }}/> 
+                      <span className="textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>MENU</span> 
                     </Button>
                 </Dropdown>
-
+                <Button  className="buttonNeu blink_me textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>
+                      DONATE 
+                </Button>
                 {controlPanel}
                 
                 <div>

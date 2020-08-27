@@ -81,20 +81,7 @@ class Login extends React.Component {
 
                     <Menu.Item style={{ backgroundColor: 'transparent', padding: "0px" }}>
                     <div style={{ lineHeight: '64px' }}>
-                    <Button
-                          //  type="primary"
-                            htmlType="submit"
-                            className={classnames(
-                            classes.contentButtonsNeu,
-                           // "login-form-button",
-                          //  classes.inputNavbar,
-                            'textAldrich'
-                            )}
-                        // onClick = { () => setDonateModalVisible(true)}
-                        >
-                            DONATE
-                    </Button>
-                    
+                                                          
                         {/* <Modal
                         visible={donateModalVisible}
                         footer = {null}
@@ -132,10 +119,11 @@ class Login extends React.Component {
 
                     </div>
                     </Menu.Item>
-
-                    <Menu.Item className={'form-inline-login'} style={{ float: 'right', backgroundColor: 'transparent', height: 64 }}>
+              
+                    <Menu.Item className={'form-inline-login'} style={{height: 64, float: "right"}}>
                     {/* Login <700px */}
-                    <Row>
+            
+                    <Row >
                         <Col span={24} xs={0} sm={0} md={0} lg={0} xl={24} xxl={24}>
                         <Form
                             layout="inline"
@@ -147,6 +135,22 @@ class Login extends React.Component {
                             )}
                             onFocus={props.clearGlobalErrors}
                         >
+                            <Form.Item>
+                                <Button
+                                    htmlType="submit"
+                                    className={classnames(
+                                    classes.contentButtonsNeu,
+                                // "login-form-button",
+                                //  classes.inputNavbar,
+                                    'textAldrich'
+                                    )}
+                                    style= {{height: '50px', width: '90px'}}
+                                // onClick = { () => setDonateModalVisible(true)}
+                                >
+                                        DONATE
+                                </Button>
+                            </Form.Item>
+
                             <Form.Item>
                             {/* {getFieldDecorator("email", {
                                 rules: [
@@ -208,6 +212,7 @@ class Login extends React.Component {
                               //  classes.inputNavbar,
                                 'textAldrich'
                                 )}
+                                style= {{height: '50px', width: '90px'}}
                             >
                                 LOG IN
                             </Button>
@@ -232,9 +237,10 @@ class Login extends React.Component {
                         </Form>
 
                         </Col>
-
                     </Row>
+               
                     </Menu.Item>
+               
                 </Menu>
                 
                 </Header>
@@ -272,6 +278,23 @@ class Login extends React.Component {
                 // style={{ overflow:'auto' }}
                 >
                     <Col span={8} xs={20} sm={20} md={20} lg={20} xl={0} xxl={0}>
+
+                    <Button
+                        //  type="primary"
+                            htmlType="submit"
+                            className={classnames(
+                            classes.contentButtonsNeu,
+                            classes.donateMobile,
+                        // "login-form-button",
+                        //  classes.inputNavbar,
+                            'textAldrich'
+                            )}
+                         //   style= {{height: '50px', width: '100%', marginTop: '10'}}
+                        // onClick = { () => setDonateModalVisible(true)}
+                        >
+                            DONATE
+                    </Button>
+
                     <Form
                         onSubmit={props.handleSubmit}
                         className={classnames(
@@ -352,7 +375,7 @@ class Login extends React.Component {
                             )}
                             
                         >
-                            Log in
+                            LOG IN
                     </Button>
                         </Form.Item>
                         <Form.Item className={classes.lastRow}>

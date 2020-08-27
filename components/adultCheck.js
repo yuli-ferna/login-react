@@ -39,7 +39,7 @@ class AdultCheck extends Component {
             >
               
               <div style={{textAlign: "center"}}>
-                <p style={{color: "#ff0000", fontWeight: "bold"}}>ONLY USE GOOGLE CHROME BROWSER  LAPTOP / DESKTOP / OCULUS QUEST</p>
+                <p style={{color: "#ff0000", fontWeight: "bold"}}>ONLY USE GOOGLE CHROME BROWSER <br/> LAPTOP / DESKTOP / OCULUS QUEST</p>
                 <br/>
                 <p>This website requires you to be 18 years or older to enter</p>
                 <h1>Are you over 18?</h1> 
@@ -47,7 +47,7 @@ class AdultCheck extends Component {
               <div style={{display: 'flex', justifyContent: "center"}}>
                 <Button type="primary" onClick={this.hideModal} style={{margin:"5px"}}>Yes</Button>
                 <Button  style={{margin:"5px"}}
-                  href="https://kindling.burningman.org/" target="_blank">No</Button>
+                  href="https://kindling.burningman.org/">No</Button>
               </div>
         </Modal>
         )

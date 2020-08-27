@@ -75,8 +75,7 @@ const classes = {
   formButton:{
     color: "#ff0080",
     boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
-    borderRadius: '20px',
-   // backgroundColor: 'rgba(99,37,201,1)',
+    borderRadius: '10px',
     background: '#6325c9',
     borderColor: 'transparent',
     '&:hover': {
@@ -145,11 +144,7 @@ const classes = {
   },
 
   contentButtonsNeu: {
-    height: 50,
-    width: '100%',
     color: "#ff0080",
-   // fontWeight: "bold",
-    backgroundColor: "transparent",
     backgroundColor: "#6325c9",
     boxShadow: ' 6px 6px 10px 0 rgba(0, 0, 0, 0.2), -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
     borderRadius: '20',
@@ -161,6 +156,14 @@ const classes = {
       boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
 
     },
+    
+  },
+
+  donateMobile: {
+    height: 50 ,
+    width: '100%' ,
+    marginTop: 10 ,
+    marginBottom: -50
   },
 
   messageChromeText:{
