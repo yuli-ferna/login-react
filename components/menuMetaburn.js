@@ -23,8 +23,8 @@ class MenuMetaburn extends React.Component {
         return(
             <div>
                <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" 
-                    // className="backMenuMetaburn "
-                    theme="dark"
+                    className="backMenuMetaburn "
+                    // theme="dark"
                     style={{ display: 'flex', alignItems: 'center', lineHeight: '64px' }}
                >
                    <Menu.Item >
