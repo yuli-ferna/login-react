@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import { Menu, Dropdown, Button, Icon, message, Row, Col } from 'antd';
 import "./scss/ui.scss";
 import ProfileForm from './profile.js';
 import ProfilePng from './profilePng.js';
@@ -8,6 +8,7 @@ import ControlPanel from './controlPanel.js';
 import ControlAudio from './controlAudio/ControlAudio.js';
 import SkyboxSelect from "./skybox-select";
 import Logout from "./logout/logout";
+import MenuMetaburn from "./menuMetaburn";
 // import Screenshare from "./screenshare.js";
 
 class NavBarUsers extends React.Component {
@@ -32,6 +33,7 @@ class NavBarUsers extends React.Component {
           screenShare: false,
           xr: false,
           supportedXR: true, 
+          metaburn: true,
           inputSkySelect:[
             //Position in skyboxSplit : url
             {n:'14', url: 'https://assets-test-o-zone.s3.amazonaws.com/assets/textures/skybox/skyboxesPreview/2020skyboxes-Skybox_A10-SBA10_Front.png'},
@@ -149,6 +151,19 @@ class NavBarUsers extends React.Component {
                   <a className="dropDownNeu" href='https://metaburn.org/camp15' target="_blank" >THE MAN</a>
                 </Menu.Item>  
               </Menu.ItemGroup>
+              <Menu.ItemGroup key="m3" title="AVATAR ANIMATIONS" style={{fontWeight: 'bold', textAlign: "center"}}>
+
+                
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" >ANIMATION 1</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" >ANIMATION 2</a>
+                </Menu.Item>  
+                <Menu.Item >
+                  <a className="dropDownNeu buttonSize" >ANIMATION 3</a>
+                </Menu.Item>  
+              </Menu.ItemGroup>
                 {/* <Menu.Item key="childVisible6">Screenshare - Camera Test</Menu.Item>   */}
             </Menu>
             
@@ -157,17 +172,31 @@ class NavBarUsers extends React.Component {
 
         return(
             <div>
-                
-                <Dropdown overlay={menu} trigger={['click']} className='textAldrich'  >
-                    <Button  className="buttonNeu">
-                      <Icon type="menu" style={{ fontSize: '20px', color: '#ff0080 ' }}/> 
-                      <span className="textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>MENU</span> 
-                    </Button>
-                </Dropdown>
-                <Button  className="buttonNeu blink_me textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>
-                      DONATE 
-                </Button>
-                {controlPanel}
+              <Row>
+
+                <Col  span={2} xs={7} sm={4}>
+                  <Dropdown overlay={menu} trigger={['click']} className='textAldrich'  >
+                      <Button  className="buttonNeu">
+                        <Icon type="menu" style={{ fontSize: '20px', color: '#ff0080 ' }}/> 
+                        <span className="textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>MENU</span> 
+                      </Button>
+                  </Dropdown>
+                  <Button  className="buttonNeu blink_me textAldrich" 
+                    style={{fontWeight: 'bold', color: '#ff0080 '}}
+                    onClick={()=>{this.setState({ audio: true });}}>
+                        AUDIO 
+                  </Button>
+                  <Button  className="buttonNeu blink_me textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>
+                        DONATE 
+                  </Button>
+                </Col>
+                <Col  span={20} xs={10} sm={16} >
+                    <MenuMetaburn visible={this.state.metaburn} />
+                  </Col>
+                  <Col  span={2} xs={7} sm={4}>
+                    {controlPanel}
+                  </Col>
+              </Row>
                 
                 <div>
                         <ProfileForm 

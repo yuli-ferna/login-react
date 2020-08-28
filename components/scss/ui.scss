@@ -6,11 +6,13 @@
 }
 .iconsContainer{
     text-align: center;
+    overflow-y: auto;
+    height: 700px;
 }
 .controlPanelContainer{
     position: absolute;
     background-color: white;
-    width: 40vw;
+    width: 25vw;
     // height: 40vw;
     text-align: center;
     z-index: 2;
