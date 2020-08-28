@@ -76,16 +76,15 @@ class Gallery extends Component {
                     maskClosable={false}
                     mask={false}
                     className='textAldrich'
-                    width="1200px"
+                    width="100%"
                  
                 >   
                 
-                    <h1 className={'textAldrich'}>GALLERY</h1>
+                    <h2 className={'textAldrich'}>GALLERY</h2>
                     <div >
                         <Button onClick={this.uploadWidget.bind(this)} 
                          style={{
-                            height: 50, 
-                            width: "11%"          
+                            height: 50,         
                             }}
                             className={'textAldrich dropDownNeu'}
                             >
