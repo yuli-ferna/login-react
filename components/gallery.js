@@ -18,7 +18,10 @@ class Gallery extends Component {
         axios.get('https://res.cloudinary.com/dqvbgvuoe/image/list/Amerik01.json')
             .then(res => {
                 console.log("get images: ",res.data.resources);
-                this.setState({gallery: res.data.resources});
+                if (res.data.resources) {
+                    this.setState({gallery: res.data.resources});
+                    
+                }
             });
 
         axios.get('https://res.cloudinary.com/dqvbgvuoe/video/list/Amerik01.json')

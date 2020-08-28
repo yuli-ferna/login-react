@@ -76,9 +76,9 @@ class NavBarUsers extends React.Component {
               <Menu.ItemGroup key="m1" title="MY STUFF" style={{fontWeight: 'bold', textAlign: "center"}}>
                 <Menu.Item key="profile" type="checkbox" className="dropDownNeu buttonSize">PROFILE</Menu.Item>
                 {/* <Menu.Item key="childVisible2" >Card</Menu.Item> */}
-                <Menu.Item key="addToMyGallery" className="dropDownNeu buttonSize">ADD TO MY GALLERY</Menu.Item> 
+                {/* <Menu.Item key="addToMyGallery" className="dropDownNeu buttonSize">ADD TO MY GALLERY</Menu.Item>  */}
                 <Menu.Item key="gallery" className="dropDownNeu buttonSize">VIEW OR SHARE MU GALLERY</Menu.Item> 
-                <Menu.Item key="chat" className="dropDownNeu buttonSize">TEXT CHAT</Menu.Item> 
+                {/* <Menu.Item key="chat" className="dropDownNeu buttonSize">TEXT CHAT</Menu.Item>  */}
               </Menu.ItemGroup>
 
               <Menu.ItemGroup key="m2" title="CONTROLS" style={{fontWeight: 'bold', textAlign: "center"}}>
@@ -103,9 +103,9 @@ class NavBarUsers extends React.Component {
                   </div>
                 </Menu.Item> 
 
-                <Menu.Item className="dropDownNeu"
+                {/* <Menu.Item className="dropDownNeu"
                 // onClick={() => {this.changeScreenShare()}}
-                >{screenShare ? 'OFF SCREENSHARE' : 'ON SCREENSHARE'}</Menu.Item> 
+                >{screenShare ? 'OFF SCREENSHARE' : 'ON SCREENSHARE'}</Menu.Item>  */}
                 <Menu.Item disabled key="avatarSelector" className="dropDownNeu buttonSize">AVATAR SELECTOR</Menu.Item> 
                 <Menu.Item disabled={!supportedXR} className="dropDownNeu"
                 onClick={() =>{  this.changeState('xr')}}
@@ -116,8 +116,8 @@ class NavBarUsers extends React.Component {
                   {window.paintModeActive ? 'PAINT MODE OFF' : 'PAINT MODE ON'}
                 </Menu.Item>
                 <Menu.Item key="audio" className="dropDownNeu buttonSize">AUDIO</Menu.Item> 
-                <Menu.Item key="sky" className="dropDownNeu buttonSize">CHANGE SKY</Menu.Item> 
-                <Menu.Item key="world" className="dropDownNeu buttonSize">CHANGE WORL</Menu.Item> 
+                {/* <Menu.Item key="sky" className="dropDownNeu buttonSize">CHANGE SKY</Menu.Item>  */}
+                {/* <Menu.Item key="world" className="dropDownNeu buttonSize">CHANGE WORL</Menu.Item>  */}
                 <Menu.Item key="donate" className="dropDownNeu buttonSize">DONATE</Menu.Item>  
                 <Menu.Item key="logout" className="dropDownNeu buttonSize">LOGOUT</Menu.Item>  
               </Menu.ItemGroup>
@@ -151,7 +151,7 @@ class NavBarUsers extends React.Component {
                   <a className="dropDownNeu" href='https://metaburn.org/camp15' target="_blank" >THE MAN</a>
                 </Menu.Item>  
               </Menu.ItemGroup>
-              <Menu.ItemGroup key="m3" title="AVATAR ANIMATIONS" style={{fontWeight: 'bold', textAlign: "center"}}>
+              <Menu.ItemGroup key="m4" title="AVATAR ANIMATIONS" style={{fontWeight: 'bold', textAlign: "center"}}>
 
                 
                 <Menu.Item >
@@ -207,10 +207,10 @@ class NavBarUsers extends React.Component {
                         visible={this.state.childVisible2 }
                         close = {this.closeChildVisible.bind(this, 'childVisible2')}
                         />  */}
-                        {/*<Gallery 
+                        <Gallery 
                         visible={this.state.gallery }
                         close = {this.closeChildVisible.bind(this, 'gallery')}
-                        /> */}
+                        /> 
                         <ControlAudio 
                         visible={this.state.audio }
                         close = {this.closeChildVisible.bind(this, 'audio')}
