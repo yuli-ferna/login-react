@@ -43,6 +43,7 @@ class NavBarUsers extends React.Component {
         }
       }
       
+      
     onClick = ({ key }) => {
 
       this.setState({ [key]: true });
@@ -189,20 +190,33 @@ class NavBarUsers extends React.Component {
                   <Button  className="buttonNeu blink_me textAldrich" style={{fontWeight: 'bold', color: '#ff0080 '}}>
                         DONATE 
                   </Button>
+                  <Button  href="https://xrlabs.whereby.com/ozone" target="_blank"
+                    className="textAldrich techSupport" 
+                  >
+                    LIVE TECH SUPPOPT 
+                  </Button>
                 </Col>
+               
+                            
                 <Col  span={20} xs={10} sm={16} >
                     <MenuMetaburn visible={this.state.metaburn} />
                   </Col>
+
+                <a href="https://donate.burningman.org/?utm_source=bridge-experience&utm_medium=donate&utm_campaign=multiverse" target="_blank" rel="noopener noreferrer">
+                    <img style={{width: "150px", height: "70px", margin: "10px" }} src="https://cdn-sharing.adobecc.com/id/urn:aaid:sc:US:610f6250-1ed9-475b-9ba2-c2990e12dc3f;version=0?component_id=737763eb-7161-4e2c-88ca-e4cbb6422eff&api_key=CometServer1&access_token=1598690432_urn%3Aaaid%3Asc%3AUS%3A610f6250-1ed9-475b-9ba2-c2990e12dc3f%3Bpublic_7f39624b0614740867694e76f080b03891b56093"></img>    
+                </a>  
+                
                   <Col  span={2} xs={7} sm={4}>
                     {controlPanel}
                   </Col>
+                 
               </Row>
                 
                 <div>
-                        <ProfileForm 
+                        {/*<ProfileForm 
                         visible={this.state.profile }
                         close = {this.closeChildVisible.bind(this, 'profile')}
-                        /> 
+                        /> */}
                         {/* <ProfilePng 
                         visible={this.state.childVisible2 }
                         close = {this.closeChildVisible.bind(this, 'childVisible2')}
