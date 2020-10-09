@@ -71,21 +71,31 @@ const classes = {
   inputNavbar:{
     height: 35,
   },
+
   formButton:{
-    backgroundColor: 'rgba(99,37,201,1)',
+    color: "#ff0080",
+    boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+    borderRadius: '10px',
+    background: '#6325c9',
     borderColor: 'transparent',
     '&:hover': {
-      background: 'rgb(63, 22, 140)',
-      borderColor: 'rgb(63, 22, 140)',
+    //  color: "rgba(255,20,147)",
+    //  background: 'rgb(63, 22, 140)',
+    //  borderColor: 'rgb(63, 22, 140)',
+      boxShadow: ' inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2), inset 6px 6px 10px 0 rgba(255, 255, 255, 0.5)',
 
     },
     '&:focus': {
-      background: 'rgb(63, 22, 140)',
-      borderColor: 'rgb(63, 22, 140)',
+    //  color: "rgba(255,20,147)",
+    //  background: 'rgb(63, 22, 140)',
+    //  borderColor: 'rgb(63, 22, 140)',
+      boxShadow: ' inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2), inset 6px 6px 10px 0 rgba(255, 255, 255, 0.5)',
     },
     '&:active': {
-      background: 'rgb(63, 22, 140)',
-      borderColor: 'rgb(63, 22, 140)',
+    //  color: "rgba(255,20,147)",
+    //  background: 'rgb(63, 22, 140)',
+    //  borderColor: 'rgb(63, 22, 140)',
+      boxShadow: ' inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2), inset 6px 6px 10px 0 rgba(255, 255, 255, 0.5)',
     }
 
   },
@@ -134,14 +144,26 @@ const classes = {
   },
 
   contentButtonsNeu: {
-    height: 35,
-    width: '100%',
-    color: "rgba(255, 255, 255, 0.5);",
-    fontWeight: "bold",
-    backgroundColor: "transparent",
+    color: "#ff0080",
+    backgroundColor: "#6325c9",
     boxShadow: ' 6px 6px 10px 0 rgba(0, 0, 0, 0.2), -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
     borderRadius: '20',
-    borderColor: 'transparent'
+    borderColor: 'transparent',
+    '&:hover': {
+      color: "#ff0080",
+      backgroundColor: "#6325c9",
+      borderColor: 'transparent',
+      boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+
+    },
+    
+  },
+
+  donateMobile: {
+    height: 50 ,
+    width: '100%' ,
+    marginTop: 10 ,
+    marginBottom: -50
   },
 
   messageChromeText:{

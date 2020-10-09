@@ -41,6 +41,25 @@ class RegistrationForm extends React.Component {
         }
         };
 
+        const contentButtonsNeu = {
+            height: 50,
+            width: '100%',
+            color: "#ff0080",
+           // fontWeight: "bold",
+            backgroundColor: "transparent",
+            backgroundColor: "#6325c9",
+            boxShadow: ' 6px 6px 10px 0 rgba(0, 0, 0, 0.2), -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+            borderRadius: '20',
+            borderColor: 'transparent',
+            '&:hover': {
+              color: "#ff0080",
+              backgroundColor: "#6325c9",
+              borderColor: 'transparent',
+              boxShadow: ' inset 6px -6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
+        
+            },
+          };
+
         const heightInput = metaburn ? 40 : 50;
 
 
@@ -146,19 +165,22 @@ class RegistrationForm extends React.Component {
             <Form.Item {...tailFormItemLayout}>
                 <Button
                 style={{
-                    height: heightInput,
-                    width: "100%",
-                    fontWeight: "bold",
+                    height: 50,
+                    width: '100%',
+                    color: "#ff0080",
+                    backgroundColor: "#6325c9",
                     boxShadow: ' inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5)',
-                    borderRadius: '20px',
-                    borderColor: 'transparent'
+                    borderRadius: '10px',
+                
                   }}
+                  
                   className={'textAldrich'}
                 // loading={this.state.loading}
                 //type="primary"
                 htmlType="submit"
+
                 >
-                Register
+                REGISTER
                 </Button>
                 
                

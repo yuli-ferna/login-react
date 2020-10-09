@@ -6,17 +6,23 @@
 }
 .iconsContainer{
     text-align: center;
+    overflow-y: auto;
+    height: 700px;
 }
 .controlPanelContainer{
     position: absolute;
     background-color: white;
-    width: 40vw;
+    width: 25vw;
     // height: 40vw;
     text-align: center;
     z-index: 2;
     top: 0;
     right: 0;
     padding: 10px;
+}
+
+.buttonSize{
+    height: 50px;
 }
 
 .circleButton {
@@ -27,10 +33,98 @@
     margin: 5px;
     vertical-align: middle;
     text-align: center !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
 }
 .labelButtonTwilio {
     width: 33%;
     text-align: center;
     margin-bottom: 0px;
-    color: rgba(0, 0, 0, 0.65);
+ //   color: rgba(0, 0, 0, 0.65);
 }
+
+.buttonNeu {
+    height: 50px !important;
+    width: 100px;
+    font-weight: bold;
+    background-color: #6325c9 !important;
+    box-shadow:  inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
+    border-radius: 20px !important;
+}
+
+.buttonNeu:hover {
+    box-shadow: 
+    inset -6px -6px 10px  rgba(255, 255, 255, 0.5),  inset 6px 6px 10px  rgba(70, 70, 70, 0.12),
+    inset -6px -6px 10px  rgba(70, 70, 70, 0.12), inset 6px 6px 10px  rgba(255, 255, 255, 0.5) !important;
+}
+
+.dropDownNeu {
+    line-height: 35px !important;
+    font-weight: bold !important;
+    background-color: #6325c9 !important;
+    color: #ff0080 !important;
+    box-shadow: inset -6px -6px 10px  rgba(255, 255, 255, 0.5),  inset 6px 6px 10px  rgba(70, 70, 70, 0.12);
+    border-radius: 20px !important;
+}
+
+.dropDownNeu:hover {
+    box-shadow:
+    inset -6px -6px 10px  rgba(255, 255, 255, 0.5),  inset 6px 6px 10px  rgba(70, 70, 70, 0.12),
+    inset -6px -6px 10px  rgba(70, 70, 70, 0.12), inset 6px 6px 10px  rgba(255, 255, 255, 0.5); 
+}
+
+
+.backMenuMetaburn {
+    background-color: #001529 !important;
+}
+
+@media (max-width: 992px) { 
+    .backMenuMetaburn{
+        background-color: #ffffff !important;
+    }
+}
+
+.buttonMetaburnNeu {
+    background-color: transparent !important;
+    box-shadow:   6px 6px 10px 0 rgba(0, 0, 0, 0.2),  -6px -6px 10px 0 rgba(255, 255, 255, 0.5) !important;
+    border-radius: 20px !important;
+    border-color: transparent !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+     width: 100px !important;
+}
+
+@media (max-width: 992px) { 
+    .buttonMetaburnNeu{
+        color: #000000 !important; 
+    }
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {
+    0% { color: #ff0080;}
+    100% { color: #ffffff; }
+}
+
+.rotar {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.techSupport{
+    height: 50px !important;
+    width: 200px !important;
+    font-weight: bold !important;
+    border-radius: 20px !important;
+    background: #ff0000 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    line-height: 50px !important; 
+}
+
+
+
+

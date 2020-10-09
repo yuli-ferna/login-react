@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Modal} from "antd";
+import { Modal, Button} from "antd";
 import { CloudinaryContext, Transformation, Image, Video } from 'cloudinary-react';
 
 class Gallery extends Component {
@@ -18,13 +18,18 @@ class Gallery extends Component {
         axios.get('https://res.cloudinary.com/dqvbgvuoe/image/list/Amerik01.json')
             .then(res => {
                 console.log("get images: ",res.data.resources);
-                this.setState({gallery: res.data.resources});
+                if (res.data.resources) {
+                    this.setState({gallery: res.data.resources});
+                    
+                }
             });
 
         axios.get('https://res.cloudinary.com/dqvbgvuoe/video/list/Amerik01.json')
         .then(res => {
             console.log("get videos: ", res.data.resources);
-            this.setState({ videos: res.data.resources});
+            if (res.data.resources) {
+                this.setState({ videos: res.data.resources});
+            }
         });    
     }
 
@@ -63,31 +68,28 @@ class Gallery extends Component {
         return (
             <div className="main">
                 <Modal
-                    visible={this.props.visible}
+                  //  visible={this.props.visible}
+                    visible={true}  //solo para pruebas desde index
                     onCancel={this.props.close}
                     footer={null}
                     keyboard={false}
                     maskClosable={false}
                     mask={false}
                     className='textAldrich'
-                    width="1200px"
+                    width="100%"
                  
                 >   
                 
-                    <h1>Gallery</h1>
+                    <h2 className={'textAldrich'}>GALLERY</h2>
                     <div >
-                        <button onClick={this.uploadWidget.bind(this)} 
+                        <Button onClick={this.uploadWidget.bind(this)} 
                          style={{
-                            height: 50,
-                            backgroundColor: 'rgba(99,37,201,1)',
-                            borderColor: 'transparent' ,
-                            fontSize: '14px',
-                            color: "rgba(255,255,255)"              
+                            height: 50,         
                             }}
-                            className={'textAldrich'}
-                            type="primary">
-                            Add Image
-                        </button>
+                            className={'textAldrich dropDownNeu'}
+                            >
+                            ADD IMAGE
+                        </Button>
                     </div>
                     <br/>
 

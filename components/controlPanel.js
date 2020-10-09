@@ -55,7 +55,7 @@ function ControlPanel(props) {
                 <Button type="primary" style={{margin: '10px 0'}} block >Twitch Stream Change</Button>
                 <div className="iconsContainer">
                     {buttons.map((item, i) => {
-                        return  <Button key={i} className="circleButton" disabled={item.disabled}
+                        return  <Button key={i} className="circleButton"  disabled={item.disabled}
                                 onClick={() => eventButton(item.nEvent, item.nButton)}>
                                     {item.name}
                                 </Button>
